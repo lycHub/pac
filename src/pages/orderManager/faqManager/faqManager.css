@@ -1,0 +1,49 @@
+.faqManager .table-wrap .table thead tr th {
+  text-align: center;
+}
+
+.faqManager .table-wrap .table-control-wrap {
+  margin-top: 15px;
+}
+
+.sf-menu {
+  width: 100%;
+  font-size: 12px;
+}
+
+.sf-menu li {
+  margin-bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+}
+
+.sf-arrows .sf-with-ul:after {
+  border-top-color: #d5d5d5;
+}
+
+.sf-menu ul li {
+  background-color: #fff;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  border-left-color: #d5d5d5;
+}
+
+.sf-menu a {
+  color: #000;
+  padding: 9px;
+}
+
+.sf-menu ul ul li {
+  background-color: #fff;
+}
+
+.sf-menu li:hover, .sf-menu li.sfHover {
+  background: #fff;
+}
+
+
+.pay-info-modal .pay-info li{
+  margin-bottom: 20px;
+}

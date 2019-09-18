@@ -1,0 +1,85 @@
+
+.auditing .form{
+    border-top: 1px solid;
+    border-right: 1px solid;
+    padding: 0;
+}
+
+.auditing .form-row{
+    border-bottom: 1px solid;
+}
+
+.auditing .form-row .form-group {
+    margin-bottom: 0;
+}
+.auditing .form-row .form-group label{
+    text-align: center;
+    display: block;
+    height: 100%;
+    line-height: 50px;
+    background-color: #e4e4e4;
+    padding: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+.auditing .form-row .form-group .form-control-wrap {
+    height: 100%;
+    padding: 8px 15px;
+    /*border: 1px solid;*/
+}
+.auditing .form-row .form-group .form-control-wrap .form-control {
+    width: 80%;
+}
+
+.auditing .form-row .form-group .good-domain span {
+    margin-top: 7px;
+}
+
+.auditing .form-row .card {
+    height: 80px;
+}
+.auditing .form-row .card label {
+    line-height: 80px;
+}
+.auditing .form-row .card .card-wrap {
+    width: 15%;
+}
+
+.auditing .form-row .profile {
+    height: 180px;
+}
+
+.auditing .form-row .profile label {
+    line-height: 180px;
+}
+.auditing .form-row .profile textarea{
+    height: 100%;
+}
+.idea{
+    margin-top:15px;
+}
+.check,.refuse{
+    overflow: hidden;
+    margin-bottom:10px;
+}
+.check .radio input[type="radio"]{
+    left: 0px;
+    top: 3px;
+}
+.check .radio:first-child{
+    margin-left: 20px;
+    margin-right:50px;
+}
+
+.answering{
+    height: 80px;
+    line-height: 80px;
+}
+.approveContent,.refuseAnswerReason{
+    border-top:1px solid #ccc;
+    padding-top: 10px;
+}
+.questionContent,.answerContent{
+    padding:8px 15px;
+    line-height:24px;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>新增答主</title>
+  <meta name="description" content="Dashboard">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
+
+  <!--Basic基础 Styles-->
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/weather-icons.min.css" rel="stylesheet">
+
+  <!--Mysteel styles-->
+  <link id="mysteel-link" href="//a.mysteelcdn.com/libs/article/assets/css/mysteel.min.css" rel="stylesheet" type="text/css">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/demo.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/typicons.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/animate.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/article/assets/css/main.css?v=2019" rel="stylesheet" type="text/css">
+  <link id="skin-link" href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/skins/darkblue.min.css" rel="stylesheet" type="text/css">
+
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/docs.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../common/styles/reset.css">
+  <link rel="stylesheet" href="../../../common/styles/layout.css">
+  <link rel="stylesheet" href="updateAnswer.css">
+</head>
+
+<body>
+<div class="page-body updateAnswer">
+  <div class="container">
+    <form class="form-horizontal col-sm-10 form">
+      <div class="row form-row">
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4">用户手机号*</label>
+          <div class="col-sm-8 clearfix form-control-wrap">
+            <input type="tel" name="tel" class="form-control col-sm-8 pull-left">
+            <button type="button" class="col-sm-2 btn pull-right">查询</button>
+          </div>
+        </div>
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4 text-center">公司名称*</label>
+          <div class="col-sm-8 form-control-wrap">
+            <input type="text" name="company" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4">用户姓名*</label>
+          <div class="col-sm-8 form-control-wrap">
+            <input type="text" name="username" class="form-control col-sm-8">
+          </div>
+        </div>
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4 text-center">昵称*</label>
+          <div class="col-sm-8 form-control-wrap">
+            <input type="text" name="nickname" class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row form-row">
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4">职位*</label>
+          <div class="col-sm-8 form-control-wrap">
+            <input type="text" name="position" class="form-control col-sm-8">
+          </div>
+        </div>
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4 text-center">从业年限*</label>
+          <div class="col-sm-8 form-control-wrap clearfix">
+            <input type="text" name="workAge" class="form-control pull-left margin-right-5">
+            <span class="pull-left margin-top-10">年</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row form-row">
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4">提问金额*</label>
+          <div class="col-sm-8 form-control-wrap">
+            <select name="money" class="form-control col-sm-8">
+              <option value="">请选择</option>
+              <option value="0">免费</option>
+              
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-sm-6 no-padding">
+          <label class="col-sm-4 text-center">旁听金额*</label>
+          <div class="col-sm-8 form-control-wrap padding-top-20">3元</div>
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="form-group col-sm-12 no-padding">
+          <label class="col-sm-2">擅长领域*</label>
+          <div class="col-sm-10 form-control-wrap clearfix good-domain">
+            <span class="pull-left margin-right-10">黑色金属黑色金属黑色金属黑色金属</span>
+            <button type="button" class="btn pull-left">选择</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="form-group col-sm-12 no-padding card">
+          <label class="col-sm-2">上传名片*</label>
+          <div class="col-sm-10 form-control-wrap clearfix">
+            <button type="button" class="btn pull-left margin-right-10 margin-top-15">+上传</button>
+            <div class="pull-left col-sm-1 card-wrap">
+              <img class="img-responsive" src="../../../assets/img/我的钢铁.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-row">
+        <div class="form-group col-sm-12 no-padding profile">
+          <label class="col-sm-2">个人简介*</label>
+          <div class="col-sm-10 form-control-wrap">
+            <textarea class="form-control"></textarea>
+          </div> 
+        </div>
+      </div>
+
+      <div class="row form-row"> 
+        <div class="form-group col-sm-12 no-padding">
+          <label class="col-sm-2">操作*</label>
+          <div class="col-sm-10 form-control-wrap clearfix">
+            <button type="button" class="btn pull-left margin-right-10 margin-top-15">提交</button>
+            <button type="button" class="btn pull-left margin-top-15">取消返回</button>
+          </div>
+        </div>
+      </div>
+
+
+
+     <!-- <div class="form-group status clearfix margin-top-20 margin-bottom-20">
+        <label class="control-label pull-left col-sm-2">状态：</label>
+        <div class="pull-left col-sm-6">
+          <div class="radio">
+            <input type="radio" id="activeStatues" class="form-control" name="optionsRadios" value="1" checked>
+            <label for="activeStatues">启用</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="disabledStatues" class="form-control" name="optionsRadios" value="0">
+            <label for="disabledStatues">停用</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group text-center col-sm-8 btns">
+        <button type="button" class="btn btn-primary btn-lg">新增</button>
+        <button type="button" class="btn btn-lg">返回</button>
+      </div>-->
+    </form>
+  </div>
+</div>
+
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/jquery-2.0.3.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="//a.mysteelcdn.com/libs/article/assets/js/skins.min.js?v=02"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/js-url/2.5.3/url.min.js"></script>
+<script src="updateAnswer.js"></script>
+</body>
+</html>

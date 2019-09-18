@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>发布</title>
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
+
+    <!--Basic基础 Styles-->
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/weather-icons.min.css" rel="stylesheet">
+
+    <!--Mysteel styles-->
+    <link id="mysteel-link" href="//a.mysteelcdn.com/libs/article/assets/css/mysteel.min.css" rel="stylesheet" type="text/css">
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/demo.min.css" rel="stylesheet">
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/typicons.min.css" rel="stylesheet">
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/animate.min.css" rel="stylesheet">
+    <link href="//a.mysteelcdn.com/libs/article/assets/css/main.css?v=2019" rel="stylesheet" type="text/css">
+    <link id="skin-link" href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/skins/darkblue.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//a.mysteelcdn.com/libs/QA_System/assets/css/jquery.dataTables.css" />
+    <link href="//a.mysteelcdn.com/libs/QA_System/assets/js/dataTables/css/jquery.dataTables_theme.css" rel="stylesheet">
+
+    <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/docs.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../common/styles/reset.css">
+    <link rel="stylesheet" href="../../../common/styles/layout.css">
+    <link rel="stylesheet" href="published.css">
+</head>
+
+<body>
+<div class="page-header page-breadcrumbs">
+    <ul id="breadcrumb" class="breadcrumb">
+        <li><i class="fa fa-home">&nbsp;</i><a class="opencp" href="javascript:void(0);" onclick="window.parent.openYwMune();">产品</a></li>
+        <li><a href="/steelphone/index.htm" target="_top">手机版后台管理系统</a></li>
+        <li>内容管理</li>
+        <li>答案管理</li>
+    </ul>
+</div>
+<div class="well with-header" style="margin:10px;">
+    <div class="header">答案管理</div>
+    <div class="page-body published">
+        <div class="container-fluid">
+            <ul class="nav-tab" >
+                <li class="active">
+                    基础信息
+                </li>
+                <li class="">
+                    数据信息
+                </li>
+                <li class="">
+                    操作日志
+                </li>
+            </ul>
+            <form class="form-horizontal col-sm-10 form">
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4">问题ID</label>
+                        <div class="col-sm-8  form-control-wrap padding-top-20 questionId">
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4 ">提问价格</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 questionPrice">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4">问题领域</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 fieldName">
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4 ">问题状态</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 questionStatus">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class=" col-sm-4">提问用户手机号</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 questionerPhone">
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class=" col-sm-4">答主手机号</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 answerManPhone">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class=" col-sm-4">提问时间</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 questionTime">
+
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class=" col-sm-4">匿名提问</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 isAnonymous">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class=" col-sm-4">答主姓名</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 answerName">
+
+                        </div>
+                    </div>
+                    <div class="form-group  col-sm-6 no-padding">
+                        <label class="col-sm-4">答案来源</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 answerType">
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4 text-center">显示栏目</label>
+                        <div class="col-sm-8 form-control-wrap isRecommend">
+                            <div class="check">
+                                <div class="checkbox checkb pull-left">
+                                    <input type="checkbox" checked disabled>
+                                    <span >全部</span>
+                                </div>
+                                <div class="checkbox checkb pull-left recommend">
+                                    <input type="checkbox"  >
+                                    <span >推荐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group  col-sm-6 no-padding">
+                        <label class="col-lg-4 col-md-4 col-sm-4">首页显示</label>
+                        <div class="col-lg-8 col-md-8 col-sm-8 form-control-wrap isFirst">
+                            <div class="check">
+                                <div class="radio">
+                                    <input type="radio" name="optionsRadios" value="1">
+                                    <span >是</span>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="optionsRadios" value="0">
+                                    <span >否</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="form-group col-sm-6 no-padding">
+                        <label class="col-sm-4 text-center">回答时间</label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 answerTime">
+
+                        </div>
+                    </div>
+                    <div class="form-group  col-sm-6 no-padding">
+                        <label class="col-sm-4"></label>
+                        <div class="col-sm-8 form-control-wrap padding-top-20 ">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row">
+                    <div class="form-group col-sm-12 no-padding">
+                        <label class="col-sm-2 question">问题</label>
+                        <div class="col-sm-10 form-control-wrap good-domain question-content padding-20 questionContent">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row platformAudit">
+                    <div class="form-group col-sm-12 no-padding ">
+                        <label class="col-sm-2 advice">平台审核问题意见</label>
+                        <div class="col-sm-10 form-control-wrap adviceContent">
+                            <div class="check">
+                                <div class="col-sm-3 questionApproveStatus"></div>
+                                <div class="col-sm-3 ">审核时间：<span class="approveTime"></span> </div>
+                                <div class="col-sm-3">审核人：<span class="approveManName"></span></div>
+                            </div>
+                            <!--<div class="approveContent col-sm-8" style="display: none;"></div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-12 no-padding">
+                        <label class="col-sm-2 answer">答主审核问题意见</label>
+                        <div class="col-sm-10 form-control-wrap answerContent">
+                            <!--<div class="title">答主回答</div>-->
+                            <div class="tip">
+                                <div class="pull-left">答主回答时间: <span class="answerTime1"></span></div>
+                                <div class="len pull-right">回答字数：<span class="wordNumber"></span></div>
+                            </div>
+                            <div class="con editAnswer"><textarea class="form-control" disabled style="width: 100%"></textarea></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row">
+                    <div class="form-group col-sm-12 no-padding ">
+                        <label class="col-sm-2 advice1" >平台审核答案意见</label>
+                        <div class="col-sm-10 form-control-wrap adviceContent1">
+                            <div class="serviceQiting ">
+                                <div class="check">
+                                    <div class="col-sm-3 answerApproveStatus"></div>
+                                    <div class="col-sm-3 ">审核时间：<span class="answerApproveTime"></span> </div>
+                                    <div class="col-sm-3">审核人：<span class="answerApproveMan"></span></div>
+                                </div>
+                                <div class="idea approveContent">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row">
+                    <div class="form-group col-sm-12 no-padding">
+                        <label class="col-sm-2">操作</label>
+                        <div class="col-sm-10 form-control-wrap">
+                            <div class="col-sm-1"><a href="javascript:void(0)" class="btn submit">提交</a></div>
+                            <div class="col-sm-3"><a href="javascript:void(0)" class="btn btnBack">返回</a></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal col-sm-10 form " style="display: none;border: none;">
+                <table class="table table-striped table-bordered table-hover text-align-center dataTable no-footer">
+                    <tr><th>旁听量</th><th>点赞量</th></tr>
+                    <tr><td class="listRead"><a href=""></a></td><td class="zan"></td></tr>
+                </table>
+            </form>
+            <form class="form-horizontal col-sm-10 form " style="display: none; border: none;width: 100%;">
+                <div class="table-wrap">
+                    <table class="table table-striped table-bordered table-hover text-align-center"></table>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/jquery-2.0.3.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="//a.mysteelcdn.com/libs/article/assets/js/skins.min.js?v=02"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/datatable/jquery.dataTables.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/paginationjs/2.1.4/pagination.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/bootstrap/daterangepicker/3.0.5/moment.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/bootstrap/daterangepicker/3.0.5/daterangepicker.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/article/assets/js/bootbox/bootbox.js"></script>
+<script src="../../../common/js/utils.js"></script>
+<script src="../../../common/js/options.js"></script>
+<script src="../../../common/js/faqPagination.js"></script>
+<script src="../../../common/js/faqDateTables.js"></script>
+<script src="../../../common/js/faqDateRangePicker.js"></script>
+<script src="../../../service/answerService.js"></script>
+<script src="published.js"></script>
+</body>
+</html>

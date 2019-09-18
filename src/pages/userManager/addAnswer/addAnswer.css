@@ -1,0 +1,82 @@
+
+.addAnswer .form{
+  padding: 0;
+}
+
+.addAnswer .form table tr .answer-check-label{
+  background-color: #e4e4e4;
+  text-align: center;
+}
+
+.addAnswer .form table tr .answer-check-value{
+  max-width: 300px;
+}
+
+.addAnswer .form table tr .card-wrap{
+  max-width: 156px;
+  cursor: pointer;
+}
+
+.addAnswer .form table .status-tr input[type=radio]{
+  margin-left: 0;
+}
+.addAnswer .form-row{
+  border-bottom: 1px solid;
+}
+
+
+
+
+
+
+.addAnswer .form .form-control-feedback{
+  right: 0;
+}
+
+.addAnswer .form .phoneNumber-wrap .form-control-feedback, .addAnswer .form .workYear-wrap .form-control-feedback{
+  right: 85px;
+}
+.addAnswer .form .questionMoney-wrap .form-control-feedback{
+  right: 10px;
+}
+
+
+.addAnswer .table-bordered>thead>tr>th, .addAnswer .table-bordered>tbody>tr>th, .addAnswer .table-bordered>tfoot>tr>th, .addAnswer .table-bordered>thead>tr>td, .addAnswer .table-bordered>tbody>tr>td, .addAnswer .table-bordered>tfoot>tr>td{
+  border-color: #000;
+}
+
+
+.addAnswer .personalProfile-tr .area {
+  position: relative;
+}
+.addAnswer .personalProfile-tr .area .word-count, .addAnswer .file-tr .help-block {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+
+.domain-select-modal .modal-body .panel-body .list-group{
+  height: 300px;
+  overflow-y: auto;
+}
+
+.domain-select-modal .modal-body .panel-body .list-group .list-group-item input{
+  vertical-align: text-bottom;
+  margin-right: 8px;
+}
+.domain-select-modal .modal-body .panel-heading{
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.big-img-modal .modal-body {
+  max-height: 580px;
+  overflow: auto;
+}
+
+.big-img-modal .modal-body .pic img{
+  width: 100%;
+}

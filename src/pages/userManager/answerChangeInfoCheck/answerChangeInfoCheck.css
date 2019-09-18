@@ -1,0 +1,84 @@
+
+.answerChangeInfoCheck .form{
+  padding: 0;
+}
+
+.answerChangeInfoCheck .form table tr .answer-check-label{
+  background-color: #e4e4e4;
+  text-align: center;
+}
+
+.answerChangeInfoCheck .form table tr .answer-check-value{
+  max-width: 300px;
+}
+
+.answerChangeInfoCheck .form table tr .card-wrap{
+  max-width: 156px;
+  cursor: pointer;
+}
+
+.answerChangeInfoCheck .form table .status-tr input[type=radio]{
+  margin-left: 0;
+}
+.answerChangeInfoCheck .form-row{
+  border-bottom: 1px solid;
+}
+
+
+
+.domain-select-modal .modal-body .panel-body .list-group{
+  height: 300px;
+  overflow-y: auto;
+}
+
+.domain-select-modal .modal-body .panel-body .list-group .list-group-item input{
+  vertical-align: text-bottom;
+  margin-right: 8px;
+}
+.domain-select-modal .modal-body .panel-heading{
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+
+.answerChangeInfoCheck .form .form-control-feedback{
+  right: 0;
+}
+
+.answerChangeInfoCheck .form .phoneNumber-wrap .form-control-feedback, .answerChangeInfoCheck .form .workYear-wrap .form-control-feedback{
+  right: 85px;
+}
+.answerChangeInfoCheck .form .questionMoney-wrap .form-control-feedback{
+  right: 10px;
+}
+
+
+.answerChangeInfoCheck .table-bordered>thead>tr>th, .answerChangeInfoCheck .table-bordered>tbody>tr>th, .answerChangeInfoCheck .table-bordered>tfoot>tr>th, .answerChangeInfoCheck .table-bordered>thead>tr>td, .answerChangeInfoCheck .table-bordered>tbody>tr>td, .answerChangeInfoCheck .table-bordered>tfoot>tr>td{
+  border-color: #000;
+}
+
+
+/* .answerChangeInfoCheck .cardAddress-tr .file-tr {
+  position: relative;
+  background-color: transparent;
+} */
+
+.answerChangeInfoCheck .personalProfile-tr .area {
+  position: relative;
+}
+.answerChangeInfoCheck .personalProfile-tr .area .word-count, .answerChangeInfoCheck .file-tr .help-block {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+.big-img-modal .modal-body {
+  max-height: 580px;
+  overflow: auto;
+}
+
+.big-img-modal .modal-body .pic img{
+  width: 100%;
+}

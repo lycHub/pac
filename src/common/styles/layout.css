@@ -1,0 +1,98 @@
+input[type=checkbox], input[type=radio] {
+  position: relative;
+  opacity: 1;
+  z-index: auto;
+  left: auto;
+  margin-left: 0;
+}
+
+.datepicker>div{
+  padding: 15px 10px;
+}
+
+.datepicker>div th, .datepicker>div td{
+  font-size: 14px;
+}
+
+.paginations .pagination{
+  float: none;
+}
+
+.paginations .select{
+  vertical-align: top;
+  margin-left: 10px;
+  color: #000;
+}
+
+
+.form-control, select{
+  font-size: 14px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-control-height{
+  height: 34px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+  vertical-align: middle;
+}
+
+.table{
+  width: 100%!important;
+}
+
+.no-wrap{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+
+.paginationjs .paginationjs-pages ul .paginationjs-prev, .paginationjs .paginationjs-pages ul .paginationjs-next{
+  padding: 0 8px;
+}
+
+.paginationjs .paginationjs-pages ul .paginationjs-prev:hover, .paginationjs .paginationjs-pages ul .paginationjs-next:hover{
+  background-color: #eee;
+}
+
+
+textarea{ resize:none;}
+
+.word-break-all{
+  word-break: break-all;
+}
+
+.qa-hide {
+  display: none;
+}
+
+.margin-init{
+  margin: initial;
+}
+
+.font-bold{
+  font-weight: bold!important;
+}
+
+.no-bottom-border{
+  border-bottom: none!important;
+}
+
+
+.tooltip-inner{
+  color: #fff;
+}
+
+
+
+.form-group.has-success input, .form-group.has-success select, .form-group.has-success textarea, .input-group.has-success input, .input-group.has-success select, .input-group.has-success textarea{
+  background-color: #fff!important;
+  color: #000!important;
+  /* border-color: rgba(0,0,0,.2); */
+}

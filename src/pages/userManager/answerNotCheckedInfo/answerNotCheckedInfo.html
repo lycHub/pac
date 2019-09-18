@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>未通过人员基本信息</title>
+  <meta name="description" content="Dashboard">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
+
+  <!--Basic基础 Styles-->
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/weather-icons.min.css" rel="stylesheet">
+
+  <!--Mysteel styles-->
+  <link id="mysteel-link" href="//a.mysteelcdn.com/libs/article/assets/css/mysteel.min.css" rel="stylesheet" type="text/css">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/demo.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/typicons.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/animate.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/article/assets/css/main.css?v=2019" rel="stylesheet" type="text/css">
+  <link id="skin-link" href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/skins/darkblue.min.css" rel="stylesheet" type="text/css">
+
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/docs.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../common/styles/reset.css">
+  <link rel="stylesheet" href="../../../common/styles/layout.css">
+  <link rel="stylesheet" href="answerNotCheckedInfo.css">
+</head>
+
+<body>
+<div class="page-header page-breadcrumbs">
+  <ul id="breadcrumb" class="breadcrumb">
+    <li><i class="fa fa-home">&nbsp;</i><a class="opencp" href="javascript:void(0);" onclick="window.parent.openYwMune();">产品</a></li>
+    <li><a href="/steelphone/index.htm" target="_top">手机版后台管理系统</a></li>
+    <li>用户管理</li>
+    <li>未通过人员基本信息</li>
+  </ul>
+</div>
+<div class="well with-header" style="margin:10px;">
+  <div class="header">未通过人员基本信息</div>
+  <div class="page-body answerNotCheckedInfo">
+      <div class="container margin-init">
+        <!-- <p class="base-txt">基本信息</p> -->
+        <form class="form-horizontal col-sm-10 form">
+          <div class="row form-row">
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4">用户手机号</label>
+              <div class="col-sm-8 clearfix form-control-wrap">
+                <span class="phoneNumber col-sm-8"></span>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4 text-center">公司名称</label>
+              <div class="col-sm-8 form-control-wrap">
+                <span class="company"></span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4">用户姓名</label>
+              <div class="col-sm-8 form-control-wrap">
+                <span class="userName"></span>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4 text-center">昵称</label>
+              <div class="col-sm-8 form-control-wrap">
+                <span class="nickName"></span>
+              </div>
+            </div>
+          </div>
+    
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4">职位</label>
+              <div class="col-sm-8 form-control-wrap">
+                  <span class="job"></span>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4 text-center">从业年限</label>
+              <div class="col-sm-8 form-control-wrap clearfix">
+                <span class="workYear"></span>
+              </div>
+            </div>
+          </div>
+    
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4">提问金额</label>
+              <div class="col-sm-8 form-control-wrap">
+                <span class="questionMoney"></span>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 no-padding">
+              <label class="col-sm-4 text-center">旁听金额</label>
+              <div class="col-sm-8 form-control-wrap padding-top-20">3元</div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-12 no-padding">
+              <label class="col-sm-2">擅长领域</label>
+              <div class="col-sm-10 form-control-wrap good-domain">
+                <span class="selected-domain"></span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-12 no-padding card">
+              <label class="col-sm-2">名片</label>
+              <div class="col-sm-10 form-control-wrap">
+                <div class="col-sm-1 card-wrap">
+                    <img class="img-responsive" />
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-12 no-padding profile">
+              <label class="col-sm-2">个人简介</label>
+              <div class="col-sm-10 form-control-wrap">
+                <p class="personalProfile"></p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-12 no-padding checkStatus">
+              <label class="col-sm-2">审核状态</label>
+              <div class="col-sm-10 form-control-wrap">
+                <div class="txt clearfix margin-bottom-10 margin-top-10">
+                  <p class="pull-left margin-right-20">
+                    答主审核<span class="check-status"></span>
+                  </p>
+                  <p class="pull-left margin-right-20">审核时间：<span class="check-time"></span></p>
+                  <p class="pull-left">审核人：<span class="check-man"></span></p>
+                </div>
+                <textarea class="form-control check-reason" readonly></textarea>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row form-row">
+            <div class="form-group col-sm-12 no-padding">
+              <label class="col-sm-2">操作</label>
+              <div class="col-sm-10 form-control-wrap">
+                <button type="button" class="btn margin-top-15 back">返回</button>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+         <!-- <div class="form-group status clearfix margin-top-20 margin-bottom-20">
+            <label class="control-label pull-left col-sm-2">状态：</label>
+            <div class="pull-left col-sm-6">
+              <div class="radio">
+                <input type="radio" id="activeStatues" class="form-control" name="optionsRadios" value="1" checked>
+                <label for="activeStatues">启用</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="disabledStatues" class="form-control" name="optionsRadios" value="0">
+                <label for="disabledStatues">停用</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-center col-sm-8 btns">
+            <button type="button" class="btn btn-primary btn-lg">新增</button>
+            <button type="button" class="btn btn-lg">返回</button>
+          </div>-->
+        </form>
+      </div>
+    </div>
+</div>
+
+
+<!-- 大图片 -->
+<div class="modal fade big-img-modal" tabindex="-1" role="dialog" aria-labelledby="查看原图">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">查看原图</h4>
+      </div>
+      <div class="modal-body">
+        <div class="pic">
+          <img />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/jquery-2.0.3.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="//a.mysteelcdn.com/libs/article/assets/js/skins.min.js?v=02"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/js-url/2.5.3/url.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/lodash.js/4.17.14/lodash.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/bootstrap/daterangepicker/3.0.5/moment.min.js"></script>
+<script src="../../../service/userService.js"></script>
+<script src="answerNotCheckedInfo.js"></script>
+</body>
+</html>

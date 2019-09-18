@@ -1,0 +1,40 @@
+.sysFundSummary .top{
+  margin-bottom: 30px;
+}
+.sysFundSummary .top h1{
+  font-size: 20px;
+  font-weight: bold!important;
+}
+.sysFundSummary .top .time-search label{
+  margin-top: 4px;
+}
+.sysFundSummary .top .time-search .action-date{
+  margin-right: 10px;
+}
+.sysFundSummary .balance{
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 3px solid;
+}
+
+
+.sysFundSummary .balance .table th{
+  text-align: center;
+}
+
+.sysFundSummary .balance .table th .fa{
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+
+.sysFundSummary .balance .table td{
+  text-align: center;
+}
+.sysFundSummary .list .table-wrap .table thead tr th {
+  text-align: center;
+}
+
+.sysFundSummary .list .table-wrap .table-control-wrap{
+  margin-top: 15px;
+}

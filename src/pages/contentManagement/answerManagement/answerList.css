@@ -1,0 +1,11 @@
+.answerList .table-wrap .table thead tr th {
+    text-align: center;
+}
+
+.answerList .table-wrap .table-control-wrap{
+    margin-top: 15px;
+}
+a.btn{
+    color:#1890FF;
+    margin-right:10px;
+}

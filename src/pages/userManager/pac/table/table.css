@@ -1,0 +1,19 @@
+.modal-wrap{
+  width: 800px;
+  margin: 100px auto;
+}
+
+.table caption{
+  text-align: left;
+}
+
+.table th{
+  text-align: center;
+}
+
+.table .min200{
+  min-width: 200px;
+}
+.table .hide{
+  visibility: hidden;
+}

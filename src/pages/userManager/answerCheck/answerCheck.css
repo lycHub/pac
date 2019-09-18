@@ -1,0 +1,86 @@
+
+.answerCheck .form{
+  padding: 0;
+}
+
+.answerCheck .form table tr .answer-check-label{
+  background-color: #e4e4e4;
+  text-align: center;
+}
+
+.answerCheck .form table tr .answer-check-value{
+  max-width: 300px;
+}
+
+.answerCheck .form table tr .card-wrap{
+  max-width: 156px;
+  cursor: pointer;
+}
+
+.answerCheck .form table .status-tr input[type=radio]{
+  margin-left: 0;
+}
+.answerCheck .form-row{
+  border-bottom: 1px solid;
+}
+
+
+
+.domain-select-modal .modal-body .panel-body .list-group{
+  height: 300px;
+  overflow-y: auto;
+}
+
+.domain-select-modal .modal-body .panel-body .list-group .list-group-item input{
+  vertical-align: text-bottom;
+  margin-right: 8px;
+}
+.domain-select-modal .modal-body .panel-heading{
+  text-overflow: ellipsis;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+
+.answerCheck .form .form-control-feedback{
+  right: 0;
+}
+
+.answerCheck .form .phoneNumber-wrap .form-control-feedback, .answerCheck .form .workYear-wrap .form-control-feedback{
+  right: 85px;
+}
+.answerCheck .form .questionMoney-wrap .form-control-feedback{
+  right: 10px;
+}
+
+
+.answerCheck .table-bordered>thead>tr>th, .answerCheck .table-bordered>tbody>tr>th, .answerCheck .table-bordered>tfoot>tr>th, .answerCheck .table-bordered>thead>tr>td, .answerCheck .table-bordered>tbody>tr>td, .answerCheck .table-bordered>tfoot>tr>td{
+  border-color: #000;
+}
+
+
+.answerCheck .cardAddress-tr .file-tr {
+  position: relative;
+  background-color: transparent;
+}
+
+
+.answerCheck .personalProfile-tr .area {
+  position: relative;
+}
+.answerCheck .personalProfile-tr .area .word-count, .answerCheck .file-tr .help-block {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
+
+
+.big-img-modal .modal-body {
+  max-height: 580px;
+  overflow: auto;
+}
+
+.big-img-modal .modal-body .pic img{
+  width: 100%;
+}

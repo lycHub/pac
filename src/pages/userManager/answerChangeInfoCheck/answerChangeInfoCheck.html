@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>答主审核</title>
+  <meta name="description" content="Dashboard">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
+
+  <!--Basic基础 Styles-->
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/weather-icons.min.css" rel="stylesheet">
+
+  <!--Mysteel styles-->
+  <link id="mysteel-link" href="//a.mysteelcdn.com/libs/article/assets/css/mysteel.min.css" rel="stylesheet" type="text/css">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/demo.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/typicons.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/animate.min.css" rel="stylesheet">
+  <link href="//a.mysteelcdn.com/libs/article/assets/css/main.css?v=2019" rel="stylesheet" type="text/css">
+  <link id="skin-link" href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/skins/darkblue.min.css" rel="stylesheet" type="text/css">
+  <link href="//a.mysteelcdn.com/libs/mysteelUI/assets/css/docs.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//a.mysteelcdn.com/libs/QA_System/bootstrapvalidator/css/bootstrapValidator.min.css" />
+<link href="//a.mysteelcdn.com/libs/QA_System/jq-file-upload/jquery.fileupload.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../common/styles/reset.css">
+  <link rel="stylesheet" href="../../../common/styles/layout.css">
+  <link rel="stylesheet" href="answerChangeInfoCheck.css">
+</head>
+
+<body>
+<div class="page-header page-breadcrumbs">
+  <ul id="breadcrumb" class="breadcrumb">
+    <li><i class="fa fa-home">&nbsp;</i><a class="opencp" href="javascript:void(0);" onclick="window.parent.openYwMune();">产品</a></li>
+    <li><a href="/steelphone/index.htm" target="_top">手机版后台管理系统</a></li>
+    <li>用户管理</li>
+    <li>答主列表</li>
+  </ul>
+</div>
+<div class="well with-header" style="margin:10px;">
+  <div class="header">答主列表</div>
+  <div class="page-body answerChangeInfoCheck">
+      <div class="container-fluid">
+        <form class="form-horizontal col-sm-10 form">
+          <table class="table table-striped table-bordered table-hover bigtable">
+            <tbody>
+            <tr>
+              <td class="col-sm-2 answer-check-label">用户手机号</td>
+              <td class="no-wrap col-sm-4 answer-check-value phoneNumber">3423432423423423</td>
+              <td class="col-sm-2 answer-check-label">公司名称*</td>
+              <td class="col-sm-4 answer-check-value company">dasdasdadasdasdasdasdasdas</td>
+            </tr>
+    
+            <tr>
+              <td class="col-sm-2 answer-check-label">用户姓名</td>
+              <td class="no-wrap col-sm-4 answer-check-value userName"></td>
+              <td class="col-sm-2 answer-check-label">昵称*</td>
+              <td class="col-sm-4 answer-check-value nickName">dadasdasssssssssdsadas</td>
+            </tr>
+    
+    
+            <tr>
+              <td class="col-sm-2 answer-check-label">职位*</td>
+              <td class="no-wrap col-sm-4 answer-check-value job">dasdasssssssss</td>
+              <td class="col-sm-2 answer-check-label">从业年限*</td>
+              <td class="col-sm-4 answer-check-value workYear">22年</td>
+            </tr>
+    
+            <tr>
+              <td class="col-sm-2 answer-check-label">提问金额*</td>
+              <td class="no-wrap col-sm-4">
+                <div class="form-group no-padding">
+                  <select name="questionMoney" class="questionMoney form-control">
+                    <option value="">请选择</option>
+                    <option value="0">免费</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="250">250</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                  </select>
+                </div>
+              </td>
+              <td class="col-sm-2 answer-check-label">旁听金额</td>
+              <td class="no-wrap col-sm-4 answer-check-value">3</td>
+            </tr>
+            </tbody>
+          </table>
+    
+    
+          <table class="table table-striped table-bordered table-hover bigtable">
+            <tr>
+              <td class="col-sm-2 answer-check-label">擅长领域</td>
+              <td class="no-wrap col-sm-10 answer-check-value selected-domain"></td>
+            </tr>
+            <tr class="cardAddress-tr">
+              <td class="col-sm-2 answer-check-label">上传名片*</td>
+              <td class="no-wrap col-sm-10 answer-check-value">
+                <div class="card-wrap">
+                  <img class="img-responsive" />
+                </div>
+              </td>
+            </tr>
+    
+            <tr class="personalProfile-tr">
+              <td class="col-sm-2 answer-check-label">个人简介*</td>
+              <td class="no-wrap col-sm-10 form-group personalProfile-wrap">
+                <div class="area">
+                  <textarea class="form-control personalProfile" name="personalProfile" rows="8"></textarea>
+                  <div class="word-count">
+                    <span class="current-num">0</span> / <span>300</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+    
+            <tr class="status-tr">
+              <td class="col-sm-2 answer-check-label">审核状态*</td>
+              <td class="no-wrap col-sm-10">
+                <div class="radio pull-left margin-right-10">
+                  <input type="radio" id="activeStatues" class="form-control" name="optionsRadios" value="2" checked>
+                  <label for="activeStatues">通过</label>
+                </div>
+                <div class="radio pull-left">
+                  <input type="radio" id="disabledStatues" class="form-control" name="optionsRadios" value="1">
+                  <label for="disabledStatues">
+                    不通过
+                    <span class="not-pass">(0次)</span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+    
+            <tr class="not-pass-reason qa-hide">
+              <td class="col-sm-2 answer-check-label">不通过理由</td>
+              <td class="no-wrap col-sm-10 form-group reason-wrap">
+                <textarea class="form-control reason" name="reason" rows="8"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-sm-2 answer-check-label">操作</td>
+              <td class="no-wrap col-sm-10">
+                <button type="submit" class="btn pull-left margin-right-10 margin-top-15">提交</button>
+                <button type="button" class="btn pull-left margin-top-15 back">取消返回</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade answerChangeInfoCheck-tip-modal" tabindex="-1" role="dialog" aria-labelledby="新增/修改">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+        <button type="button" class="btn btn-primary btn-comfirm">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 大图片 -->
+<div class="modal fade big-img-modal" tabindex="-1" role="dialog" aria-labelledby="查看原图">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">查看原图</h4>
+      </div>
+      <div class="modal-body">
+        <div class="pic">
+          <img />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/jquery-2.0.3.min.js"></script>
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="//a.mysteelcdn.com/libs/article/assets/js/skins.min.js?v=02"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/js-url/2.5.3/url.min.js"></script>
+<script type="text/javascript" src="//a.mysteelcdn.com/libs/bootstrap/validator/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="//a.mysteelcdn.com/libs/bootstrap/validator/js/language/zh_CN.js"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/jq-file-upload/jquery.ui.widget.js"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/jq-file-upload/jquery.fileupload.js"></script>
+<script src="//a.mysteelcdn.com/libs/QA_System/lodash.js/4.17.14/lodash.min.js"></script>
+<script src="../../../service/userService.js"></script>
+<script src="answerChangeInfoCheck.js"></script>
+</body>
+</html>
