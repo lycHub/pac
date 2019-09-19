@@ -98,13 +98,13 @@ inputStrat.forEach(key => {
 });
 // trKey="${key}" index="${index}"
 
-function emptyTpl(key, index) {
-  return `<input placeholder="值" trKey="${key}" index="${index}"  class="form-control hide" name="param" />`;
+function emptyTpl(key, index, val) {
+  return `<input placeholder="值" trKey="${key}" index="${index}" value="${val}" class="form-control hide" name="param" />`;
 }
-function inputTpl(key, index) {
-  return `<input placeholder="值" trKey="${key}" index="${index}"  class="form-control" name="param" />`;
+function inputTpl(key, index, val) {
+  return `<input placeholder="值" trKey="${key}" index="${index}" value="${val}" class="form-control" name="param" />`;
 }
-function defaultTpl(key, index) {
+function defaultTpl(key, index, val) {
   var options = '';
   for (var attr in times) {
     options += `<option value="${times[attr]}">${attr}</option>`;
@@ -114,6 +114,6 @@ function defaultTpl(key, index) {
 }
 
 
-function lastTdTpl(type, key, index) {
-  return strats[type] ? strats[type](key, index) : defaultStrat(key, index);
+function lastTdTpl(type, key, index, val) {
+  return strats[type] ? strats[type](key, index, val) : defaultStrat(key, index, val);
 }
