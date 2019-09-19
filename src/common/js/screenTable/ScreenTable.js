@@ -168,7 +168,7 @@
       handleGroupClick: function() {
         this.rowIndex++;
         // $.extend({}, this.baseRow, { uuid: 'ff0' })
-        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { uuid: 'ff0' })];
+        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { uuid: guid() })];
         this.addGroup('row' + this.rowIndex);
       },
 
@@ -178,7 +178,7 @@
           this.handleGroupClick();
         }else {
           var uuid = 'ff' + this.tableDatas[this.rowIndex].length;
-          this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { uuid: uuid }));
+          this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { uuid: guid() }));
           this.addCondition(this.rowIndex);
         }
         // console.log(this.tableDatas);
