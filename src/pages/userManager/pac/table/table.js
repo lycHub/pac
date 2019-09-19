@@ -13,52 +13,52 @@ var json = [
     filedName: 'title',
     filterCode: '4',
     param: '',
-    uuid: 0
+    uuid: 'ff0'
   }],
   [{
     filedName: 'title',
     filterCode: '3',
     param: '322',
-    uuid: 0
+    uuid: 'ff0'
   }, {
     filedName: 'source',
     filterCode: '3',
     param: 'ds',
-    uuid: 1
+    uuid: 'ff1'
   }, {
     filedName: 'author',
     filterCode: '4',
     param: 'dss',
-    uuid: 2
+    uuid: 'ff2'
   }],
   [{
     filedName: 'source',
     filterCode: '9',
     param: '',
-    uuid: 0
+    uuid: 'ff0'
   }],
   [{
     filedName: 'author',
     filterCode: '10',
     param: '',
-    uuid: 1
+    uuid: 'ff0'
   }],
   [{
     filedName: 'author',
     filterCode: '5',
     param: '32',
-    uuid: 0
+    uuid: 'ff0'
   }, {
     filedName: 'author',
     filterCode: '3',
     param: '345',
-    uuid: 1
+    uuid: 'ff1'
   }],
   [{
     filedName: 'title',
     filterCode: '1',
     param: '',
-    uuid: 0
+    uuid: 'ff0'
   }]
 ]
 
@@ -180,28 +180,21 @@ $(function () {
 });
 
 
-function formatTableDatas(json) {
-
+function formatTableDatas(arr) {
+  var filterExpression = formatExpression(arr);
+  console.log('filterExpression', filterExpression);
+  var spiderFilterConfigList = _.flatten(arr);
+  /*{
+    filterExpression,
+    spiderFilterConfigList
+  }*/
 }
 
 
-/*
-* {
-    "filterExpression": "(1) && (2)",
-    "spiderFilterConfigList": [
-        {
-            "filedName": "source",
-            "filterCode": 7,
-            "param": "aaa",
-			"uuid":"1"
-
-        },
-        {
-            "filedName": "title",
-            "filterCode": 3,
-            "param": "offer"
-	          "uuid":"2"
-        }
-    ]
+function formatExpression(arr) {
+  return arr.map(function (row) {
+    return row.map(function (y) {
+      return `(${y.uuid})`
+    }).join('&&');
+  }).join(' || ');
 }
-* */
