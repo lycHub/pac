@@ -28,8 +28,9 @@
     init: function () {
       this.el.html(initTpl);
       this.initEvts();
-      if (this.options.initialDatas) {
-        this.renderDatas(this.options.initialDatas);
+      var initialDatas = this.options.initialDatas;
+      if (initialDatas && !$.isEmptyObject(initialDatas)) {
+        this.renderDatas(initialDatas);
       }
       this.emitEvent('onInit', this.tableDatas);
     },
@@ -167,7 +168,7 @@
       handleGroupClick: function() {
         this.rowIndex++;
         // $.extend({}, this.baseRow, { uuid: 'ff0' })
-        this.tableDatas[this.rowIndex] = [{ ...this.baseRow, uuid: 'ff0' }];
+        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { uuid: 'ff0' })];
         this.addGroup('row' + this.rowIndex);
       },
 
@@ -177,7 +178,7 @@
           this.handleGroupClick();
         }else {
           var uuid = 'ff' + this.tableDatas[this.rowIndex].length;
-          this.tableDatas[this.rowIndex].push({ ...this.baseRow, uuid: uuid });
+          this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { uuid: uuid }));
           this.addCondition(this.rowIndex);
         }
         // console.log(this.tableDatas);

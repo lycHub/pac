@@ -1,7 +1,7 @@
 console.log('table');
 var str = '!((ff0)||(ff0)&&(ff1)&&(ff2)||(ff0)||(ff0)||(ff0)&&(ff1)||(ff0))';
 var response = {
-  filterExpression: '(ff0)||(ff0)&&(ff1)&&(ff2)||(ff0)||(ff0)||(ff0)&&(ff1)||(ff0)',
+  /*filterExpression: '(ff0)||(ff0)&&(ff1)&&(ff2)||(ff0)||(ff0)||(ff0)&&(ff1)||(ff0)',
   // filterExpression: str,
   formatFilterConfigs: [
     {
@@ -55,14 +55,14 @@ var response = {
       param: '',
       uuid: 'ff0'
     }
-  ]
+  ]*/
 }
 
 var screenTable = null;
 $(function () {
   $('.sx').click(function () {
     var screenTable = new ScreenTable('.modal-wrap', {
-      initialDatas: response,
+      initialDatas: response || null,
       onInit: function (tableDatas) {
         // console.log('onInit', tableDatas);
         var that = this;
