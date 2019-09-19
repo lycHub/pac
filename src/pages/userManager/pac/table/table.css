@@ -3,17 +3,17 @@
   margin: 100px auto;
 }
 
-.table caption{
+.screen-table caption{
   text-align: left;
 }
 
-.table th{
+.screen-table th{
   text-align: center;
 }
 
-.table .min200{
+.screen-table .min200{
   min-width: 200px;
 }
-.table .hide{
+.screen-table .hide{
   visibility: hidden;
 }
