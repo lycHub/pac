@@ -11,7 +11,7 @@ Options.prototype = {
   // 触发回调函数
   emitEvent: function(type, args) {
     if (this.options[type]) {
-      this.options[type](args);
+      this.options[type].apply(this, [args]);
     }
   }
 }
