@@ -1,7 +1,8 @@
 console.log('table');
+var str = '!((ff0)||(ff0)&&(ff1)&&(ff2)||(ff0)||(ff0)||(ff0)&&(ff1)||(ff0))';
 var response = {
-  acquisitionType: 1,
   filterExpression: '(ff0)||(ff0)&&(ff1)&&(ff2)||(ff0)||(ff0)||(ff0)&&(ff1)||(ff0)',
+  // filterExpression: str,
   formatFilterConfigs: [
     {
       filedName: 'title',
@@ -97,4 +98,3 @@ $(function () {
 
   });
 });
-

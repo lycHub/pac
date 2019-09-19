@@ -36,17 +36,20 @@
 
     renderDatas: function (response) {
       var formatFilterConfigs = response.formatFilterConfigs.slice();
-      this.tableDatas = response.filterExpression.split('||').map(row => row.split('&&').map(function() {
+      var filterExpression = response.filterExpression;
+      this.acquisitionType = 0;
+      if (filterExpression.charAt(0) === '!') {
+        filterExpression = filterExpression.slice(2, -1);
+        this.acquisitionType = 1;
+      }
+      this.tableDatas = filterExpression.split('||').map(row => row.split('&&').map(function() {
         return formatFilterConfigs.shift();
       }));
       this.generateTable(this.tableDatas);
-      this.generateAcquisitionType(response.acquisitionType);
+      this.el.find('.table select[name = acquisitionType] option').eq(this.acquisitionType).prop('selected', 'selected');
     },
 
-    generateAcquisitionType: function (acquisitionType) {
-      this.el.find('.table select[name = acquisitionType] option').eq(acquisitionType).prop('selected', 'selected');
-      this.acquisitionType = acquisitionType;
-    },
+
 
 
     generateTable: function (rows) {
@@ -219,11 +222,15 @@
       // 转参数
       transferParams: function () {
         if (this.tableDatas.length) {
+          // 1--不采集 0--采集
+          console.log('acquisitionType', this.acquisitionType);
           var datas = this.tableDatas.slice();
           var filterExpression = this.formatExpression(datas);
+          if (this.acquisitionType === '1') {
+            filterExpression = `!(${filterExpression})`;
+          }
           var spiderFilterConfigList = _.flatten(datas);
           return {
-            acquisitionType: this.acquisitionType,
             filterExpression: filterExpression,
             spiderFilterConfigList: spiderFilterConfigList
           }
