@@ -1,0 +1,27 @@
+.modal-wrap{
+  /*width: 800px;
+  margin: 100px auto;*/
+  padding: 20px 10px;
+}
+
+.screen-table caption{
+  padding: 10px 0;
+}
+
+.screen-table caption .btn-group {
+  float: left;
+}
+.screen-table caption .select {
+  float: right;
+}
+
+.screen-table th{
+  text-align: center;
+}
+
+.screen-table .min200{
+  min-width: 200px;
+}
+.screen-table .hide{
+  visibility: hidden;
+}

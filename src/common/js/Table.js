@@ -1,25 +1,12 @@
 (function (w) {
-  function FaqDataTables(options) {
-    Options.call(this);
-    this.options = this.merge({
-      el: null,
-      ordering: false,
-      searching: false,
-      info: false,
-      paging: false,
-      data: [],
-      columns: [],
-      columnDefs: [],
-      language: {
-        emptyTable: '暂无数据'
-      },
-      renderer: 'bootstrap',
-      afterDraw: $.noop
-    }, options);
-    if (!this.options.el) {
+  function FaqDataTables(el, options) {
+    if (!el) {
       throw new Error('缺少el');
     }
-    this.dataTableIns = null;
+    Options.call(this);
+    this.el = el;
+
+    this.tableIns = null;
     this.init();
   }
   FaqDataTables.prototype = $.extend(Object.create(Options.prototype), {
@@ -36,7 +23,6 @@
         renderer: options.renderer,
         data: options.data,
         columns: options.columns,
-        columnDefs: options.columnDefs,
         language: options.language,
         drawCallback: function () {
           that.emitEvent('afterDraw', this);
