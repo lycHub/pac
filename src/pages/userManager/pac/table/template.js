@@ -13,69 +13,70 @@ var times = {
 }
 
 
+var filedNameOpts = {
+  title: '标题',
+  source: '来源',
+  author: '作者',
+  articleTime: '时间'
+}
+
+function generatefieldNameSelect(selected) {
+  var value = selected || '';
+  var opts = '';
+  for (var attr in filedNameOpts) {
+    var opt = `<option value="${attr}">`;
+    if (attr === value) {
+      opt = `<option value="${attr}" selected>`;
+    }
+    opts += `${opt}${filedNameOpts[attr]}</option>`;
+  }
+  return opts;
+}
+
+
+
+var filterCodeOpts = ['', '空', '非空', '包含', '不包含', '等于', '不等于', '大于', '小于', '时间等于', '时间早于', '时间晚于'];
+
+function generatefiledCodeSelect(selected) {
+  var value = selected || '';
+  var opts = '';
+  filterCodeOpts.forEach(function (item, key) {
+    if (item) {
+      var opt = `<option value="${key}">`;
+      if (key.toString() === value) {
+        opt = `<option value="${key}" selected>`;
+      }
+      opts += `${opt}${item}</option>`;
+    }
+  });
+  return opts;
+}
+
+
 function groupTpl(key) {
   return `<tr rowKey="${key}">
           <th>或者</th>
           <td>并且</td>
           <td>
-            <select name="filedName" class="form-control" trKey="${key}" keyName="rowKey">
-               <option value="title">标题</option>
-              <option value="source">来源</option>
-              <option value="author">作者</option>
-              <option value="articleTime">时间</option>
-            </select>
+            <select name="filedName" class="form-control" trKey="${key}" keyName="rowKey">${generatefieldNameSelect()}</select>
           </td>
           <td>
-            <select name="filterCode" class="form-control" trKey="${key}" keyName="rowKey">
-              <option value="1">空</option>
-              <option value="2">非空</option>
-              <option value="3">包含</option>
-              <option value="4">不包含</option>
-              <option value="5">等于</option>
-              <option value="6">不等于</option>
-              <option value="7">大于</option>
-              <option value="8">小于</option>
-              <option value="9">时间等于</option>
-              <option value="10">时间早于</option>
-              <option value="11">时间晚于</option>
-            </select>
+            <select name="filterCode" class="form-control" trKey="${key}" keyName="rowKey">${generatefiledCodeSelect()}</select>
           </td>
-          <td class="min200">
-            <!--<input placeholder="值" class="form-control hide" name="param" />-->
-          </td>
+          <td class="min200"></td>
         </tr>`;
 }
 
 function conditionTpl(key, index) {
-  console.log('index', index);
   return `<tr topKey="${key}" index="${index}">
           <td>并且</td>
           <td>
-            <select name="filedName" class="form-control" index="${index}" trKey="${key}" keyName="topKey">
-              <option value="title">标题</option>
-              <option value="source">来源</option>
-              <option value="author">作者</option>
-              <option value="articleTime">时间</option>
-            </select>
+            <select name="filedName" class="form-control" index="${index}" trKey="${key}" keyName="topKey">${generatefieldNameSelect()}</select>
           </td>
           <td>
-            <select name="filterCode" class="form-control" index="${index}" trKey="${key}" keyName="topKey">
-              <option value="1">空</option>
-              <option value="2">非空</option>
-              <option value="3">包含</option>
-              <option value="4">不包含</option>
-              <option value="5">等于</option>
-              <option value="6">不等于</option>
-              <option value="7">大于</option>
-              <option value="8">小于</option>
-              <option value="9">时间等于</option>
-              <option value="10">时间早于</option>
-              <option value="11">时间晚于</option>
-            </select>
+            <select name="filterCode" class="form-control" index="${index}" trKey="${key}" keyName="topKey">${generatefiledCodeSelect()}</select>
           </td>
-          <td class="min200">
-            <!--<input placeholder="值" class="form-control hide" name="param" />-->
-          </td>
+          <td class="min200"></td>
         </tr>`;
 }
 
@@ -115,5 +116,6 @@ function defaultTpl(key, index, val) {
 
 
 function lastTdTpl(type, key, index, val) {
-  return strats[type] ? strats[type](key, index, val) : defaultStrat(key, index, val);
+  var value = val || '';
+  return strats[type] ? strats[type](key, index, value) : defaultStrat(key, index, value);
 }
