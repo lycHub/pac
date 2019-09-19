@@ -1,12 +1,66 @@
 console.log('table');
 var baseRow = {
-  group: '并且',
+  // group: '并且',
   filedName: 'title',
   filterCode: '1',
   param: ''
 };
-var rowIndex = 0;
-var tableDatas = {};
+var rowIndex = -1;
+var tableDatas = [];
+
+var json = [
+  [{
+    filedName: 'title',
+    filterCode: '4',
+    param: '',
+    uuid: 0
+  }],
+  [{
+    filedName: 'title',
+    filterCode: '3',
+    param: '322',
+    uuid: 0
+  }, {
+    filedName: 'source',
+    filterCode: '3',
+    param: 'ds',
+    uuid: 1
+  }, {
+    filedName: 'author',
+    filterCode: '4',
+    param: 'dss',
+    uuid: 2
+  }],
+  [{
+    filedName: 'source',
+    filterCode: '9',
+    param: '',
+    uuid: 0
+  }],
+  [{
+    filedName: 'author',
+    filterCode: '10',
+    param: '',
+    uuid: 1
+  }],
+  [{
+    filedName: 'author',
+    filterCode: '5',
+    param: '32',
+    uuid: 0
+  }, {
+    filedName: 'author',
+    filterCode: '3',
+    param: '345',
+    uuid: 1
+  }],
+  [{
+    filedName: 'title',
+    filterCode: '1',
+    param: '',
+    uuid: 0
+  }]
+]
 
 
 $(function () {
@@ -21,37 +75,25 @@ $(function () {
 
 
   btns.test.click(function () {
-    // console.log(format(new Date(2014, 1, 11), 'MM/dd/yyyy'));
-    // console.log(+moment().subtract(1, 'M').endOf('month'));
-
-    var obj = {
-      '前天': +moment().subtract(1, 'M').endOf('month')
-    }
-    for (var attr in obj) {
-      console.log('attr', attr);
-      console.log('val', obj[attr]);
-    }
-    // console.log(obj);
+    formatTableDatas(json);
   });
 
   btns.group.click(handleGroupClick);
 
   function handleGroupClick() {
     rowIndex++;
-    const trKey = 'row' + rowIndex;
-    tableDatas[trKey] = [{ ...baseRow }];
-    addGroup(trKey);
-    console.log(tableDatas);
+    tableDatas[rowIndex] = [{ ...baseRow, uuid: 'ff0' }];
+    addGroup('row' + rowIndex);
+
   }
 
   btns.condition.click(function () {
-    if ($.isEmptyObject(tableDatas)) {
+    if (!tableDatas.length) {
       handleGroupClick();
     }else {
-      var lastKey = 'row' + rowIndex;
-      tableDatas[lastKey].push({ ...baseRow });
-      // console.log('tableDatas', tableDatas[lastKey]);
-      addCondition(lastKey);
+      var uuid = 'ff' + tableDatas[rowIndex].length;
+      tableDatas[rowIndex].push({ ...baseRow, uuid: uuid });
+      addCondition(rowIndex);
     }
     console.log(tableDatas);
   });
@@ -62,12 +104,11 @@ $(function () {
     var rowKey = lastRow.attr('rowKey');
     var topKey = lastRow.attr('topKey');
     if (rowKey) {
-      delete tableDatas[rowKey];
-      // console.log('rowKey', rowKey, tableDatas);
+      tableDatas.pop();
       delRow(rowKey, false);
+      rowIndex--;
     }else if (topKey) {
-      tableDatas[topKey].pop();
-      // console.log('topKey', topKey, tableDatas);
+      tableDatas[topKey.slice(-1)].pop();
       delRow(topKey, true);
     }
     console.log(tableDatas);
@@ -76,13 +117,14 @@ $(function () {
   function delRow(key, reduceColspan) {
     tbody.find('tr:last').remove();
     if (reduceColspan) {
-      tbody.find(`tr[rowKey=${key}] th`).attr('rowspan', tableDatas[key].length);
+      tbody.find(`tr[rowKey=${key}] th`).attr('rowspan', tableDatas[key.slice(-1)].length);
     }
   }
   
   
-  function addCondition(lastKey) {
-    var rowspan = tableDatas[lastKey].length;
+  function addCondition(lastIndex) {
+    var rowspan = tableDatas[lastIndex].length;
+    var lastKey = 'row' + lastIndex;
     tbody.find(`tr[rowKey=${lastKey}] th`).attr('rowspan', rowspan);
     tbody.append(conditionTpl(lastKey, rowspan - 1));
   }
@@ -102,6 +144,7 @@ $(function () {
   tbody.on('change', 'select[name=filterCode]', function () {
     console.log('filterCode');
 
+
     var keyName = $(this).attr('keyName');
     var trKey = $(this).attr('trKey');
     var index = $(this).attr('index') || 0;
@@ -109,9 +152,11 @@ $(function () {
     var lastTd = tbody.find(`tr[${keyName}=${trKey}]`).eq(trueIndex).find('td:last');
     var val = $(this).val();
     lastTd.html(lastTdTpl(val, trKey, index));
+
     // console.log('trKey', trKey);
     // console.log('index', index);
-    tableDatas[trKey][index]['filterCode'] = val;
+
+    tableDatas[trKey.slice(-1)][index]['filterCode'] = val;
     console.log('filterCode', tableDatas);
   });
 
@@ -126,9 +171,37 @@ $(function () {
   });
 
   function setVal(type) {
-    var trKey = $(this).attr('trKey');
+    var trKey = $(this).attr('trKey').slice(-1);
     var index = $(this).attr('index') || 0;
+    // console.log('trKey', trKey, index);
     tableDatas[trKey][index][type] = $(this).val();
     console.log('tableDatas', tableDatas);
   }
 });
+
+
+function formatTableDatas(json) {
+
+}
+
+
+/*
+* {
+    "filterExpression": "(1) && (2)",
+    "spiderFilterConfigList": [
+        {
+            "filedName": "source",
+            "filterCode": 7,
+            "param": "aaa",
+			"uuid":"1"
+
+        },
+        {
+            "filedName": "title",
+            "filterCode": 3,
+            "param": "offer"
+	          "uuid":"2"
+        }
+    ]
+}
+* */

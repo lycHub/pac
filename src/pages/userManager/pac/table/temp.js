@@ -32,6 +32,7 @@ var arr = [
 var exp = arr.map((item,i)=>{
   return '('+item.map((_,idx)=>'f_'+i+'_'+idx).join(' && ')+')';
 }).join(' || ');
+
 //降维
 var flated = arr.flatMap((item,i)=>{
   return item.map((iitem,idx)=>{
@@ -39,6 +40,7 @@ var flated = arr.flatMap((item,i)=>{
     return iitem;
   });
 });
+
 //反解析
 var newArr = exp.split('||')
   .map(item=>item.match(/\((.*)\)/).last())

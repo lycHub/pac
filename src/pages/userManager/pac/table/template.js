@@ -48,7 +48,7 @@ function groupTpl(key) {
 
 function conditionTpl(key, index) {
   console.log('index', index);
-  return `<tr topKey="${key}">
+  return `<tr topKey="${key}" index="${index}">
           <td>并且</td>
           <td>
             <select name="filedName" class="form-control" index="${index}" trKey="${key}" keyName="topKey">
