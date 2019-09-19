@@ -88,9 +88,9 @@ $(function () {
           ]
         });
       },
-      onChange: function (tableDatas) {
+      /*onChange: function (tableDatas) {
         console.log('onChange', tableDatas);
-      }
+      }*/
     });
 
   });
