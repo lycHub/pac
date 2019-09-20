@@ -28,11 +28,11 @@ var initTpl = `<div class="screen-wrap">
       <table class="table table-striped table-bordered table-hover text-align-center screen-table">
         <thead>
         <tr>
-          <th>组间关系</th>
-          <td>组内关系</td>
+          <th class="min80">组间关系</th>
+          <td class="min80">组内关系</td>
           <td>字段名称</td>
-          <td>条件</td>
-          <td>值</td>
+          <td class="min120">条件</td>
+          <td class="min100">值</td>
         </tr>
         </thead>
         <tbody></tbody>
@@ -68,9 +68,6 @@ var times = [{
 }, {
   key: '104',
   label: '明天'
-}, {
-  key: '101',
-  label: '前天'
 }, {
   key: '105',
   label: '后天'
@@ -127,7 +124,7 @@ function generatefiledCodeSelect(selected) {
   filterCodeOpts.forEach(function (item, key) {
     if (item) {
       var opt = `<option value="${key}">`;
-      if (key.toString() === value) {
+      if (key == value) {
         opt = `<option value="${key}" selected>`;
       }
       opts += `${opt}${item}</option>`;
@@ -147,7 +144,7 @@ function groupTpl(key) {
           <td>
             <select name="filterCode" class="form-control" trKey="${key}" keyName="rowKey">${generatefiledCodeSelect()}</select>
           </td>
-          <td class="min200"></td>
+          <td></td>
         </tr>`;
 }
 
@@ -160,7 +157,7 @@ function conditionTpl(key, index) {
           <td>
             <select name="filterCode" class="form-control" index="${index}" trKey="${key}" keyName="topKey">${generatefiledCodeSelect()}</select>
           </td>
-          <td class="min200"></td>
+          <td></td>
         </tr>`;
 }
 
@@ -192,11 +189,17 @@ function inputTpl(key, index, val) {
 function defaultTpl(key, index, val) {
   var options = '';
   times.forEach(function (item) {
-    options += `<option value="${item.key}">${item.label}</option>`;
+    // options += `<option value="${item.key}">${item.label}</option>`;
+    var opt = `<option value="${item.key}">`;
+    if (item.key == val) {
+      opt = `<option value="${item.key}" selected>`;
+    }
+    options += `${opt}${item.label}</option>`;
   });
   // console.log('options', options);
   return `<select name="param" class="form-control" trKey="${key}" index="${index}">${options}</select>`;
 }
+
 
 
 function lastTdTpl(type, key, index, val) {

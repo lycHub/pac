@@ -128,13 +128,13 @@ $(function () {
         {
           filedName: 'source',
           filterCode: '9',
-          param: '',
+          param: '301',
           varName: 'f_0'
         },
         {
           filedName: 'author',
           filterCode: '10',
-          param: '',
+          param: '201',
           varName: 'f_0'
         },
         {
@@ -162,7 +162,7 @@ $(function () {
         // console.log('onInit', tableDatas);
         var that = this;
         $( ".modal-wrap" ).dialog({
-          width: 630,
+          width: 650,
           modal: true,
           buttons: [
             {

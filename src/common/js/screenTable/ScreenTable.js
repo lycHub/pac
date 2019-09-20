@@ -47,7 +47,7 @@
         return formatFilterConfigs.shift();
       }));
       this.generateTable(this.tableDatas);
-      this.el.find('.table select[name = acquisitionType] option').eq(this.acquisitionType).prop('selected', 'selected');
+      this.el.find('.caption .select select[name = acquisitionType] option').eq(this.acquisitionType).prop('selected', 'selected');
     },
 
 

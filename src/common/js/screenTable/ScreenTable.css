@@ -23,8 +23,14 @@
   text-align: center;
 }
 
-.screen-wrap .screen-table-wrap .screen-table .min200{
-  min-width: 200px;
+.screen-wrap .screen-table-wrap .screen-table .min80{
+  min-width: 80px;
+}
+.screen-wrap .screen-table-wrap .screen-table .min100{
+  min-width: 100px;
+}
+.screen-wrap .screen-table-wrap .screen-table .min120{
+  min-width: 120px;
 }
 .screen-wrap .screen-table-wrap .screen-table .hide{
   visibility: hidden;
