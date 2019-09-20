@@ -54,12 +54,12 @@ var times = {
 
 
 var filedNameOpts = {
-  targetUrl: '文章链接',
   title: '标题',
+  content: '内容',
   source: '来源',
   author: '作者',
   articleTime: '文字发表时间',
-  content: '内容',
+  targetUrl: '文章链接',
 }
 
 function generatefieldNameSelect(selected) {
