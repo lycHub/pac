@@ -25,6 +25,8 @@ $(function () {
 
   var el = $('.modal-wrap');
 
+
+
   el.find('.pc-process .fa').tooltip({
     position: { my: "left+10", at: "right" },
     classes: {

@@ -36,6 +36,22 @@
   margin: 0 10px 0 15px;
 }
 
+.pc-process .operates .operate-area .btns .up .dropdown .dropdown-menu li{
+  cursor: pointer;
+}
+.pc-process .operates .operate-area .btns .up .dropdown .dropdown-menu li:hover a{
+  color: #fff;
+  background-color: #31708f;
+}
+
+.pc-process .operates .operate-area .btns .down .btn-arrow{
+  margin-right: 15px;
+}
+
+.pc-process .operates .operate-area .btns .down .del{
+  max-width: 90px;
+}
+
 .pc-process .operates .operate-area .btns .btn-r .btn-arrow .glyphicon {
   margin-right: 0;
 }

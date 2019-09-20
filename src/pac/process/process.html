@@ -53,17 +53,26 @@
           </div>
         </div>
         <div class="btns col-md-6">
-          <div class="btn-r row">
+          <div class="btn-r row up">
             <button class="btn col-md-4 btn-arrow">
               <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
             </button>
-            <button class="btn col-md-6">新建</button>
+            <!--<button class="btn col-md-6">新建</button>-->
+            <div class="dropdown col-md-6">
+              <button class="btn btn-default dropdown-toggle btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">新建</button>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                <li><a>Action</a></li>
+                <li><a>Another action</a></li>
+                <li><a>Something else here</a></li>
+                <li><a>Separated link</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="btn-r row">
+          <div class="btn-r row down">
             <button class="btn col-md-4 btn-arrow">
               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
             </button>
-            <button class="btn col-md-6">删除</button>
+            <button class="btn col-md-6 del">删除</button>
           </div>
         </div>
       </div>
@@ -92,8 +101,10 @@
 </div>
 
 
+
+
 <script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/jquery-2.0.3.min.js"></script>
-<!--<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>-->
+<script src="//a.mysteelcdn.com/libs/mysteelUI/assets/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
 <script src="//a.mysteelcdn.com/libs/article/assets/js/skins.min.js?v=02"></script>
