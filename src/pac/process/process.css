@@ -11,7 +11,7 @@
   font-weight: bold!important;
 }
 .pc-process .operates .operate-area .steps .panel{
-  max-height: 156px;
+  max-height: 158px;
   overflow-y: auto;
 }
 
@@ -44,6 +44,7 @@
 .pc-process .area {
   border: 1px solid #999;
   height: 125px;
+  padding: 5px 0 0 10px;
 }
 
 .pc-process .process-bef .area, .pc-process .process-af .area{
