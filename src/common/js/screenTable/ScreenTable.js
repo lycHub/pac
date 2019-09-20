@@ -99,20 +99,21 @@
 
 
     initEvts: function () {
-        var table = this.el.find('.table');
-        this.tbody = table.find('tbody');
-        var btns = {
-          group: table.find('.group'),
-          condition: table.find('.condition'),
-          del: table.find('.del'),
-          test: table.find('.test'),
+        var screenWrap = this.el.find('.screen-wrap');
+        this.tbody = screenWrap.find('tbody');
+      var btns = {
+          group: screenWrap.find('.caption .group'),
+          condition: screenWrap.find('.caption .condition'),
+          del: screenWrap.find('.caption .del')
         }
+
+
 
         btns.group.click(this.handleGroupClick.bind(this));
         btns.condition.click(this.handleConditionClick.bind(this));
         btns.del.click(this.handleDelClick.bind(this));
         var that = this;
-        table.find('select[name = acquisitionType]').change(function () {
+        screenWrap.find('.caption select[name = acquisitionType]').change(function () {
           that.acquisitionType = this.value;
         });
         this.listenValChange();

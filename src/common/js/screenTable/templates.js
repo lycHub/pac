@@ -1,5 +1,5 @@
-var initTpl = `<table class="table table-striped table-bordered table-hover text-align-center screen-table">
-    <caption class="clearfix">
+var initTpl = `<div class="screen-wrap">
+    <div class="caption clearfix">
       <div class="btn-group" role="group">
         <button class="btn group">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -21,20 +21,24 @@ var initTpl = `<table class="table table-striped table-bordered table-hover text
           <option value="1">不采集该数据</option>
         </select>
       </div>
-    </caption>
-    <thead>
-    <tr>
-      <th>组间关系</th>
-      <td>组内关系</td>
-      <td>字段名称</td>
-      <td>条件</td>
-      <td>值</td>
-    </tr>
-    </thead>
-    <tbody>
+    </div>
 
-    </tbody>
-  </table>`;
+
+    <div class="screen-table-wrap">
+      <table class="table table-striped table-bordered table-hover text-align-center screen-table">
+        <thead>
+        <tr>
+          <th>组间关系</th>
+          <td>组内关系</td>
+          <td>字段名称</td>
+          <td>条件</td>
+          <td>值</td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>`;
 
 
 
