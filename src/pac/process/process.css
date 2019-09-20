@@ -11,8 +11,10 @@
   font-weight: bold!important;
 }
 .pc-process .operates .operate-area .steps .panel{
-  max-height: 158px;
+  height: 158px;
   overflow-y: auto;
+  border: 1px solid #999;
+  border-radius: 0;
 }
 
 .pc-process .operates .operate-area .steps .panel .list-group {
@@ -63,6 +65,8 @@
   padding: 5px 0 0 10px;
 }
 
+
+
 .pc-process .process-bef .area, .pc-process .process-af .area{
   height: 70px;
 }
@@ -71,13 +75,13 @@
   border-color: #31708f;
 }
 
-
-.test{
-  width: 100px;
-  margin: 100px auto;
-}
-
 .pc-process-tip{
   background-color: #000;
   color: #fff;
+}
+
+
+/* 默认 */
+.pc-process .step-init {
+  padding: 0;
 }
