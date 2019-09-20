@@ -85,3 +85,21 @@
 .pc-process .step-init {
   padding: 0;
 }
+
+
+/* 输入 */
+.pc-process .textarea{
+  width: 100%;
+  resize: none;
+}
+
+
+/* 替换 */
+.pc-process .step-replace .row textarea{
+  resize: none;
+  height: 50px;
+}
+
+.pc-process .step-replace .source{
+  margin-bottom: 12px;
+}
