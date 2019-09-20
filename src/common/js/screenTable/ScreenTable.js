@@ -168,7 +168,7 @@
       handleGroupClick: function() {
         this.rowIndex++;
         // $.extend({}, this.baseRow, { uuid: 'ff0' })
-        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { uuid: guid() })];
+        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { varName: 'f_0' })];
         this.addGroup('row' + this.rowIndex);
       },
 
@@ -177,8 +177,8 @@
         if (!this.tableDatas.length) {
           this.handleGroupClick();
         }else {
-          var uuid = 'ff' + this.tableDatas[this.rowIndex].length;
-          this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { uuid: guid() }));
+          var uuid = 'f_' + this.tableDatas[this.rowIndex].length;
+          this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { varName: uuid }));
           this.addCondition(this.rowIndex);
         }
         // console.log(this.tableDatas);
@@ -241,7 +241,7 @@
       formatExpression: function (arr) {
         return arr.map(function (row) {
           return row.map(function (y) {
-            return `(${y.uuid})`
+            return `(${y.varName})`
           }).join('&&');
         }).join('||');
       }

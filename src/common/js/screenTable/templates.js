@@ -38,19 +38,57 @@ var initTpl = `<table class="table table-striped table-bordered table-hover text
 
 
 
-var times = {
+/*var times = {
   '前天': +moment().subtract(2, 'd'),
   '昨天': +moment().subtract(1, 'd'),
   '今天': +moment(),
   '明天': +moment().add(1, 'd'),
-  '后天': +moment().subtract(2, 'd'),
+  '后天': +moment().add(2, 'd'),
   '上周今天': +moment().subtract(1, 'w'),
   '上周一': +moment().subtract(1, 'w').startOf('week'),
   '上周日': +moment().subtract(1, 'w').endOf('week'),
   '上月今天': +moment().subtract(1, 'M'),
   '上月第一天': +moment().subtract(1, 'M').startOf('month'),
   '上月最后一天': +moment().subtract(1, 'M').endOf('month'),
-}
+}*/
+
+var times = [{
+  key: '101',
+  label: '前天'
+}, {
+  key: '102',
+  label: '昨天'
+}, {
+  key: '103',
+  label: '今天'
+}, {
+  key: '104',
+  label: '明天'
+}, {
+  key: '101',
+  label: '前天'
+}, {
+  key: '105',
+  label: '后天'
+}, {
+  key: '201',
+  label: '上周今天'
+}, {
+  key: '202',
+  label: '上周一'
+}, {
+  key: '203',
+  label: '上周日'
+}, {
+  key: '301',
+  label: '上月今天'
+}, {
+  key: '302',
+  label: '上月第一天'
+}, {
+  key: '303',
+  label: '上月最后天'
+}];
 
 
 var filedNameOpts = {
@@ -149,9 +187,9 @@ function inputTpl(key, index, val) {
 }
 function defaultTpl(key, index, val) {
   var options = '';
-  for (var attr in times) {
-    options += `<option value="${times[attr]}">${attr}</option>`;
-  }
+  times.forEach(function (item) {
+    options += `<option value="${item.key}">${item.label}</option>`;
+  });
   // console.log('options', options);
   return `<select name="param" class="form-control" trKey="${key}" index="${index}">${options}</select>`;
 }

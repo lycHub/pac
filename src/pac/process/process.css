@@ -1,0 +1,66 @@
+.modal-wrap{
+ /* width: 650px;
+  margin: 100px auto;*/
+  /*padding: 20px 10px;*/
+}
+
+
+
+.pc-process h5 {
+  text-indent: 8px;
+  font-weight: bold!important;
+}
+.pc-process .operates .operate-area .steps .panel{
+  max-height: 156px;
+  overflow-y: auto;
+}
+
+.pc-process .operates .operate-area .steps .panel .list-group {
+  cursor: pointer;
+}
+
+.pc-process .operates .operate-area .steps .panel .list-group .active {
+  color: #fff;
+  background-color: #31708f;
+}
+
+.pc-process .operates .operate-area .btns {
+  margin-top: 30px;
+}
+
+.pc-process .operates .operate-area .btns .btn-r:first-child{
+  margin-bottom: 15px;
+}
+
+.pc-process .operates .operate-area .btns .btn-r .btn-arrow{
+  margin: 0 10px 0 15px;
+}
+
+.pc-process .operates .operate-area .btns .btn-r .btn-arrow .glyphicon {
+  margin-right: 0;
+}
+
+
+.pc-process .area {
+  border: 1px solid #999;
+  height: 125px;
+}
+
+.pc-process .process-bef .area, .pc-process .process-af .area{
+  height: 70px;
+}
+
+.pc-process .process-bef .area:hover, .pc-process .process-af .area:hover{
+  border-color: #31708f;
+}
+
+
+.test{
+  width: 100px;
+  margin: 100px auto;
+}
+
+.pc-process-tip{
+  background-color: #000;
+  color: #fff;
+}

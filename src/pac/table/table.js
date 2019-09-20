@@ -8,52 +8,52 @@ var response = {
       filedName: 'title',
       filterCode: '4',
       param: '',
-      uuid: 'ff0'
+      varName: 'ff0'
     },
     {
       filedName: 'title',
       filterCode: '3',
       param: '322',
-      uuid: 'ff0'
+      varName: 'ff0'
     }, {
       filedName: 'source',
       filterCode: '3',
       param: 'ds',
-      uuid: 'ff1'
+      varName: 'ff1'
     }, {
       filedName: 'author',
       filterCode: '4',
       param: 'dss',
-      uuid: 'ff2'
+      varName: 'ff2'
     },
     {
       filedName: 'source',
       filterCode: '9',
       param: '',
-      uuid: 'ff0'
+      varName: 'ff0'
     },
     {
       filedName: 'author',
       filterCode: '10',
       param: '',
-      uuid: 'ff0'
+      varName: 'ff0'
     },
     {
       filedName: 'author',
       filterCode: '5',
       param: '32',
-      uuid: 'ff0'
+      varName: 'ff0'
     }, {
       filedName: 'author',
       filterCode: '3',
       param: '345',
-      uuid: 'ff1'
+      varName: 'ff1'
     },
     {
       filedName: 'title',
       filterCode: '1',
       param: '',
-      uuid: 'ff0'
+      varName: 'ff0'
     }
   ]*/
 }
@@ -68,9 +68,11 @@ $(function () {
         var that = this;
         $( ".modal-wrap" ).dialog({
           width: 650,
-          height: 500,
+          // height: 500,
           modal: true,
           resizable: false,
+          closeOnEscape: false,
+          title: "数据筛选",
           buttons: [
             {
               text: '取消',
@@ -105,52 +107,52 @@ $(function () {
           filedName: 'title',
           filterCode: '4',
           param: '',
-          uuid: guid()
+          varName: 'f_0'
         },
         {
           filedName: 'title',
           filterCode: '3',
           param: '322',
-          uuid: guid()
+          varName: 'f_0'
         }, {
           filedName: 'source',
           filterCode: '3',
           param: 'ds',
-          uuid: guid()
+          varName: 'f_1'
         }, {
           filedName: 'author',
           filterCode: '4',
           param: 'dss',
-          uuid: guid()
+          varName: 'f_2'
         },
         {
           filedName: 'source',
           filterCode: '9',
           param: '',
-          uuid: guid()
+          varName: 'f_0'
         },
         {
           filedName: 'author',
           filterCode: '10',
           param: '',
-          uuid: guid()
+          varName: 'f_0'
         },
         {
           filedName: 'author',
           filterCode: '5',
           param: '32',
-          uuid: guid()
+          varName: 'f_0'
         }, {
           filedName: 'author',
           filterCode: '3',
           param: '345',
-          uuid: guid()
+          varName: 'f_1'
         },
         {
           filedName: 'title',
           filterCode: '1',
           param: '',
-          uuid: guid()
+          varName: 'f_0'
         }
       ]
     }
