@@ -3,7 +3,7 @@ node_modules
 /dist
 
 /src/assets
-
+src.zip
 # local env files
 .env.local
 .env.*.local
