@@ -2,8 +2,13 @@ console.log('process');
 
 var conversionTypes = ['', '添加前缀', '添加后缀', '文本替换', '默认值', '固定值', '正则替换'];
 
+// 选中的步骤列表
 var selectedConversions = [];
+
+// 当前选中的索引
 var highlightConversionIndex = -1;
+
+
 $(function () {
   $(".modal-wrap").dialog({
     width: 450,
@@ -52,6 +57,7 @@ $(function () {
   dropdown.html(menuTtems);
 
   var stepPanel = el.find('.pc-process .operate-area .list-group');
+  var stepInfo = el.find('.pc-process .step-info');
 
   initEvents();
   function initEvents() {
@@ -60,6 +66,11 @@ $(function () {
     btns.del.click(onDeleteStep);
     stepPanel.on('click', 'li', onChangeStep);
     dropdown.on('click', 'li', onCreateStep);
+
+    /* 值变化 */
+    stepInfo.on('blur', '.textarea', onTextBlur);
+    stepInfo.on('blur', '.textarea-source', onTextSourceBlur);
+    stepInfo.on('blur', '.textarea-target', onTextTargetBlur);
   }
 
   // 上一步
@@ -120,5 +131,21 @@ $(function () {
       steps += '<li class="list-group-item  '+ active +'" data-code="'+ item.code +'">'+ num +'. '+ item.label +'</li>';
     });
     stepPanel.html(steps);
+  }
+
+
+  // 普通文本域变化
+  function onTextBlur() {
+    console.log('onTextBlur');
+  }
+
+  // 替换框1变化
+  function onTextSourceBlur() {
+    console.log('onTextSourceBlur');
+  }
+
+  // 替换框2变化
+  function onTextTargetBlur() {
+    console.log('onTextTargetBlur');
   }
 });
