@@ -7,10 +7,16 @@ var response = {
 
 $(function () {
   $('.sx').click(function () {
+    var datas = JSON.parse(localStorage.getItem('steps-record'));
+    if (!datas) {
+      datas = response;
+    }
+    console.log('datas', datas);
     var process = new Process('.modal-wrap', {
-      initialDatas: response,
+      initialDatas: datas,
       onInit: function () {
         console.log('init');
+        var that = this;
         $( ".modal-wrap" ).dialog({
           width: 450,
           // height: 500,
@@ -28,6 +34,8 @@ $(function () {
             {
               text: '确定',
               click: function() {
+                // console.log('ok', that.getParam());
+                localStorage.setItem('steps-record', JSON.stringify(that.getParam()));
                 $(this).dialog("close");
               }
             }
@@ -36,6 +44,7 @@ $(function () {
       },
       onChange: function (params) {
         console.log('onChange', params);
+        // localStorage.setItem('steps-record', JSON.stringify(params));
       }
     });
 
@@ -48,7 +57,7 @@ $(function () {
 
 
 
-
+/*
   $('.hx').click(function () {
     response = {
       articleVo: {title: 'e'},
@@ -115,11 +124,11 @@ $(function () {
     });
 
 
-    /*// 设值
+    /!*!// 设值
     setTimeout(function () {
       process.setText('aaa', 'after');
-    }, 1000);*/
-  });
+    }, 1000);*!/
+  });*/
 
 
 });

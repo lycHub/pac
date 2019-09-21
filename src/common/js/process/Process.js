@@ -69,6 +69,9 @@ function Process(el, options) {
 
   // 当前选中的索引
   this.highlightConversionIndex = -1;
+
+  // 参数对象
+  this.param = {};
   this.init();
 }
 Process.prototype = $.extend(Object.create(Options.prototype), {
@@ -302,19 +305,20 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
           filedName = attr || 'title';
         }
       }
-      var param = {
+      this.param = {
         articleVo: this.articleVo,
         spiderConversionConfigs: []
       };
+      var that = this;
       this.selectedConversions.forEach(function (item) {
-        param.spiderConversionConfigs.push({
+        that.param.spiderConversionConfigs.push({
           conversionCode: item.conversionCode,
           conversionType: item.conversionType,
           param: item.param,
           filedName: filedName
         });
       });
-      this.emitEvent('onChange', param);
+      this.emitEvent('onChange', this.param);
     },
 
 
@@ -334,6 +338,10 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
       }else {
         this.processAfter.find('.area').text(trueText);
       }
+    },
+
+    getParam: function () {
+      return this.param || {};
     }
   });
   w.Process = Process;
