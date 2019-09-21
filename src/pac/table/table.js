@@ -61,6 +61,8 @@ var response = {
 var screenTable = null;
 $(function () {
   $('.sx').click(function () {
+
+
     var screenTable = new ScreenTable('.modal-wrap', {
       initialDatas: response || {},
       onInit: function (tableDatas) {
@@ -94,6 +96,11 @@ $(function () {
         console.log('onChange', tableDatas);
       }*/
     });
+
+
+
+
+
 
   });
 

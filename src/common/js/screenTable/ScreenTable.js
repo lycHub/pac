@@ -12,7 +12,6 @@
     }, options);
 
 
-    this.screenTableIns = null;
     this.baseRow = {
       filedName: 'title',
       filterCode: '1',
