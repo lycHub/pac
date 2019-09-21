@@ -1,6 +1,12 @@
 console.log('process');
-
-// var conversionTypes = ['', '添加前缀', '添加后缀', '文本替换', '默认值', '固定值', '正则替换'];
+var currentType = 'a';
+var articleType = {
+  articleTime: 'a',
+  author: 'b',
+  content: 'c',
+  source: 'd',
+  title: 'e'
+}
 
 var conversionTypes = [{
   conversionCode: 1,
@@ -232,9 +238,10 @@ $(function () {
   function onTextBlur() {
     // console.log('onTextBlur', highlightConversionIndex);
     // console.log('val', this.value);
-    console.log('selectedConversions', selectedConversions);
     var currentCoversion = selectedConversions[highlightConversionIndex];
     currentCoversion.param = makeParam(currentCoversion.paramKeys, [this.value]);
+    // console.log('currentCoversion', currentCoversion);
+    onParamChange();
   }
 
   // 替换框1变化
@@ -243,7 +250,8 @@ $(function () {
     var paramCopy = $.extend({}, currentCoversion.param);
     var paramKeys = currentCoversion.paramKeys;
     currentCoversion.param = makeParam(paramKeys, [this.value, paramCopy[paramKeys[1]]]);
-    console.log('onTextSourceBlur', currentCoversion);
+    // console.log('onTextSourceBlur', currentCoversion);
+    onParamChange();
   }
 
   // 替换框2变化
@@ -252,17 +260,44 @@ $(function () {
     var paramCopy = $.extend({}, currentCoversion.param);
     var paramKeys = currentCoversion.paramKeys;
     currentCoversion.param = makeParam(paramKeys, [paramCopy[paramKeys[0]], this.value]);
-    console.log('onTextTargetBlur', currentCoversion);
+    // console.log('onTextTargetBlur', currentCoversion);
+    onParamChange();
   }
 
-  // [p1, p2] [v1, v2]
+  function onParamChange() {
+    console.log('onParamChange', selectedConversions);
+    var param = {
+      articleVo: {
+        articleTime: 'a'
+      },
+      spiderConversionConfigs: []
+    };
+    selectedConversions.forEach(function (item) {
+      param.spiderConversionConfigs.push({
+        conversionCode: item.conversionCode,
+        conversionType: item.conversionType,
+        param: item.param,
+        filedName: 'articleTime'
+      });
+    });
+    console.log('param', param);
+  }
+
+
 
   // 组装param
   function makeParam(paramKeys, values) {
     var result = _.zipObject(paramKeys, values);
-    /*paramKeys.forEach(function (item) {
-      result[item] = '';
-    });*/
     return result;
+  }
+
+  function setText(text, type) {
+    var trueType = type || 'before';
+    var trueText = text || '';
+    if (trueType === 'before') {
+      processBefore.find('.area').text(trueText);
+    }else {
+      processAfter.find('.area').text(trueText);
+    }
   }
 });
