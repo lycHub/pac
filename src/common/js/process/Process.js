@@ -1,11 +1,5 @@
 (function (w) {
-  var articleType = {
-    articleTime: 'a',
-    author: 'b',
-    content: 'c',
-    source: 'd',
-    title: 'e'
-  }
+  var articleTypes = ['articleTime', 'author', 'content', 'source', 'title'];
 
   var conversionTypes = [{
     conversionCode: 1,
@@ -65,11 +59,9 @@ function Process(el, options) {
   Options.call(this);
   this.el = typeof el === 'string' ? $(el) : el;
   this.options = this.merge({
-    articleVo: { title: 'e' },
     onInit: $.noop,
     onChange: $.noop,
   }, options);
-
 
 
   // 选中的步骤列表
@@ -85,8 +77,45 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
     this.el.html(initTpl);
     this.initToolTip();
     this.initEvts();
+
+    var initialDatas = this.options.initialDatas;
+    if (initialDatas && !$.isEmptyObject(initialDatas)) {
+      this.renderDatas(initialDatas);
+    }
+
+
     this.emitEvent('onInit');
   },
+
+
+  // 回显
+  renderDatas: function (datas) {
+    console.log('datas', datas);
+    var that = this;
+    if (datas.spiderConversionConfigs && datas.spiderConversionConfigs.length) {
+      datas.spiderConversionConfigs.forEach(function (item) {
+        var matchType = _.find(conversionTypes, { conversionCode: item.conversionCode });
+        that.selectedConversions.push($.extend({}, matchType, item));
+      });
+      this.highlightConversionIndex = Math.max(this.selectedConversions.length - 1, 0);
+      this.renderSteps();
+      this.setTpl(this.selectedConversions[this.highlightConversionIndex]);
+    }else {
+      this.selectedConversions = [];
+      this.highlightConversionIndex = -1;
+    }
+
+    console.log('selectedConversions', this.selectedConversions);
+    this.articleVo = datas.articleVo;
+    articleTypes.forEach(function (item) {
+      if (that.articleVo[item]) {
+        console.log('articleVo', that.articleVo[item]);
+        that.setText(that.articleVo[item], 'before');
+      }
+    });
+  },
+
+
 
   initToolTip: function () {
     this.el.find('.pc-process .fa').tooltip({
@@ -266,7 +295,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 调接口
     onParamChange: function () {
-      // console.log('onParamChange', this.selectedConversions);
+      if (!this.articleVo || $.isEmptyObject(this.articleVo)) return;
       var filedName = '';
       for (var attr in this.articleVo) {
         if (attr) {
