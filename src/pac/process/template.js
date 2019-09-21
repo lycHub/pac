@@ -2,15 +2,15 @@ function defaultTpl() {
   return '<div class="area step-init"></div>';
 }
 
-function textAreaTpl(val) {
-  var value = val || '';
+function textAreaTpl(params) {
+  var value = params.val1 || '';
   return '<textarea class="area textarea" placeholder="请输入...">'+ value +'</textarea>';
 }
 
- function replaceTextTpl (val, val2, placeholder) {
-   var value = val || '';
-   var value2 = val2 || '';
-    var text = placeholder || '请输入...';
+ function replaceTextTpl (params) {
+    var value = params.val1 || '';
+    var value2 = params.val2 || '';
+    var text = params.placeholder || '请输入...';
     return '<div class="area step-replace">\n' +
       '        <div class="row source">\n' +
       '          <label class="col-md-3">替换内容：</label>\n' +
@@ -25,9 +25,18 @@ function textAreaTpl(val) {
 
 
 var tplTypes = {
-
+  textAreaTpl: textAreaTpl,
+  replaceTextTpl: replaceTextTpl
 }
+/*
+* val1, val2, placeholder
+* */
 
-function stepInfoTpl(val, val2, type, placeholder) {
-  return defaultTpl();
+
+function stepInfoTpl(type, params) {
+  if (!type || type === 'default') {
+    return defaultTpl();
+  }
+
+  return tplTypes[type](params || {});
 }

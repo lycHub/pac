@@ -1,6 +1,56 @@
 console.log('process');
 
-var conversionTypes = ['', '添加前缀', '添加后缀', '文本替换', '默认值', '固定值', '正则替换'];
+// var conversionTypes = ['', '添加前缀', '添加后缀', '文本替换', '默认值', '固定值', '正则替换'];
+
+var conversionTypes = [{
+  conversionCode: 1,
+  conversionType: '添加前缀',
+  tpl: {
+    type: 'text',
+    use: 'textAreaTpl'
+  },
+  paramKeys: ['prefix']
+}, {
+  conversionCode: 2,
+  conversionType: '添加后缀',
+  tpl: {
+    type: 'text',
+    use: 'textAreaTpl'
+  },
+  paramKeys: ['postfix']
+}, {
+  conversionCode: 3,
+  conversionType: '文本替换',
+  tpl: {
+    type: 'replaceText',
+    use: 'replaceTextTpl'
+  },
+  paramKeys: ['newChar', 'oldChar']
+}, {
+  conversionCode: 4,
+  conversionType: '默认值',
+  tpl: {
+    type: 'text',
+    use: 'textAreaTpl'
+  },
+  paramKeys: ['defaultChar']
+}, {
+  conversionCode: 5,
+  conversionType: '固定值',
+  tpl: {
+    type: 'text',
+    use: 'textAreaTpl'
+  },
+  paramKeys: ['forceCoverChar']
+}, {
+  conversionCode: 6,
+  conversionType: '正则替换',
+  tpl: {
+    type: 'replaceReg',
+    use: 'replaceTextTpl'
+  },
+  paramKeys: ['jsRegex', 'replacement']
+}];
 
 // 选中的步骤列表
 var selectedConversions = [];
@@ -49,9 +99,9 @@ $(function () {
 
   var dropdown = el.find('.pc-process .operate-area .btns .dropdown .dropdown-menu');
   var menuTtems = '';
-  conversionTypes.forEach(function (item, index) {
+  conversionTypes.forEach(function (item) {
     if (item) {
-      menuTtems += '<li><a data-code="'+ index +'">'+ item +'</a></li>';
+      menuTtems += '<li><a data-code="'+ item.conversionCode +'">'+ item.conversionType +'</a></li>';
     }
   });
   dropdown.html(menuTtems);
@@ -98,16 +148,28 @@ $(function () {
   // 新建步骤
   function onCreateStep(evt) {
     var code = $(evt.target).data('code');
-    selectedConversions.push({ code: code, label: conversionTypes[code] });
-    highlightConversionIndex = selectedConversions.length - 1;
-    renderSteps();
+    var stepType = _.find(conversionTypes, { conversionCode: code });
+    if (stepType) {
+      selectedConversions.push($.extend({}, stepType, { param: {} }));
+      highlightConversionIndex = selectedConversions.length - 1;
+      renderSteps();
+      setTpl(stepType);
+     /* var param = {};
+      if (stepType.tpl.type === 'replaceReg') {
+        param.placeholder = '请输入正则表达式...';
+      }
+      renderTpl(stepType.tpl, param);*/
+    }
   }
 
   // 切换步骤
   function onChangeStep() {
-    console.log('onChangeStep');
-    highlightConversionIndex = $(this).index();
-    renderSteps();
+    if (highlightConversionIndex !== $(this).index()) {
+      console.log('onChangeStep');
+      highlightConversionIndex = $(this).index();
+      renderSteps();
+      setTpl(selectedConversions[highlightConversionIndex]);
+    }
   }
 
   // 删除
@@ -117,6 +179,7 @@ $(function () {
       selectedConversions.splice(highlightConversionIndex, 1);
       highlightConversionIndex = Math.max(0, highlightConversionIndex - 1);
       renderSteps();
+      setTpl(selectedConversions[highlightConversionIndex]);
     }
   }
 
@@ -128,15 +191,49 @@ $(function () {
     selectedConversions.forEach(function (item, index) {
       var active = index === highlightConversionIndex ? 'active' : '';
       var num = index + 1;
-      steps += '<li class="list-group-item  '+ active +'" data-code="'+ item.code +'">'+ num +'. '+ item.label +'</li>';
+      steps += '<li class="list-group-item  '+ active +'" data-code="'+ item.conversionCode +'">'+ num +'. '+ item.conversionType +'</li>';
     });
     stepPanel.html(steps);
   }
 
 
+  // 设置tpl值
+  function setTpl(currentCovertion) {
+    console.log('currentCovertion', currentCovertion);
+    var keyCount = 0;
+    var param = {};
+    if (currentCovertion) {
+      for (var attr in currentCovertion.param) {
+        param['val' + (++keyCount)] = currentCovertion.param[attr];
+      }
+
+      if (currentCovertion.tpl.type === 'replaceReg') {
+        param.placeholder = '请输入正则表达式...';
+      }
+      console.log('param', param);
+      renderTpl(currentCovertion.tpl, param);
+    }else {
+      renderTpl({ use: 'default' });
+    }
+  }
+
+  // 更换tpl
+  function renderTpl(tpl, param) {
+    console.log('tpl', tpl, param);
+    stepInfo.find('.area').remove();
+    stepInfo.append(stepInfoTpl(tpl.use, param));
+    // console.log(stepInfoTpl(tpl.use));
+  }
+
+
   // 普通文本域变化
   function onTextBlur() {
-    console.log('onTextBlur');
+
+    // console.log('onTextBlur', highlightConversionIndex);
+    // console.log('val', this.value);
+    console.log('selectedConversions', selectedConversions);
+    var currentCoversion = selectedConversions[highlightConversionIndex];
+    currentCoversion.param = makeParam(currentCoversion.paramKeys, [this.value]);
   }
 
   // 替换框1变化
@@ -147,5 +244,16 @@ $(function () {
   // 替换框2变化
   function onTextTargetBlur() {
     console.log('onTextTargetBlur');
+  }
+
+  // [p1, p2] [v1, v2]
+
+  // 组装param
+  function makeParam(paramKeys, values) {
+    var result = _.zipObject(paramKeys, values);
+    /*paramKeys.forEach(function (item) {
+      result[item] = '';
+    });*/
+    return result;
   }
 });
