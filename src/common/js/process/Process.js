@@ -98,7 +98,12 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
     if (datas.spiderConversionConfigs && datas.spiderConversionConfigs.length) {
       datas.spiderConversionConfigs.forEach(function (item) {
         var matchType = _.find(conversionTypes, { conversionCode: item.conversionCode });
-        that.selectedConversions.push($.extend({}, matchType, item));
+        that.selectedConversions.push($.extend({}, matchType, {
+          conversionCode: item.conversionCode,
+          conversionType: item.conversionType,
+          filedName: item.filedName,
+          param: JSON.parse(item.param)
+        }));
       });
       this.highlightConversionIndex = Math.max(this.selectedConversions.length - 1, 0);
       this.renderSteps();
@@ -192,6 +197,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
       this.selectedConversions.splice(toIndex, 1, this.selectedConversions.splice(fromIndex, 1 , this.selectedConversions[toIndex])[0]);
       this.highlightConversionIndex = toIndex;
       this.renderSteps();
+      this.onParamChange();
     },
 
 
@@ -202,6 +208,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
         this.highlightConversionIndex = Math.max(0, this.highlightConversionIndex - 1);
         this.renderSteps();
         this.setTpl(this.selectedConversions[this.highlightConversionIndex]);
+        this.onParamChange();
       }
     },
 
@@ -223,6 +230,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
         this.highlightConversionIndex = index;
         this.renderSteps();
         this.setTpl(this.selectedConversions[this.highlightConversionIndex]);
+        this.onParamChange(this.highlightConversionIndex);
       }
     },
 
@@ -242,8 +250,9 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 设置tpl值
     setTpl: function (currentCovertion) {
-      // console.log('currentCovertion', currentCovertion);
+      console.log('currentCovertion', currentCovertion);
       var keyCount = 0;
+      // var currentCovertionParam = (typeof currentCovertion.param === 'string') ? JSON.parse(currentCovertion.param) : currentCovertion.param;
       var param = {};
       if (currentCovertion) {
         for (var attr in currentCovertion.param) {
@@ -297,7 +306,8 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
     },
 
     // 调接口
-    onParamChange: function () {
+    onParamChange: function (index) {
+      var limitIndex = index || 0;
       if (!this.articleVo || $.isEmptyObject(this.articleVo)) return;
       var filedName = '';
       for (var attr in this.articleVo) {
@@ -310,13 +320,15 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
         spiderConversionConfigs: []
       };
       var that = this;
-      this.selectedConversions.forEach(function (item) {
-        that.param.spiderConversionConfigs.push({
-          conversionCode: item.conversionCode,
-          conversionType: item.conversionType,
-          param: item.param,
-          filedName: filedName
-        });
+      this.selectedConversions.forEach(function (item, index) {
+        if (!limitIndex || index <= limitIndex) {
+          that.param.spiderConversionConfigs.push({
+            conversionCode: item.conversionCode,
+            conversionType: item.conversionType,
+            param: JSON.stringify(item.param),
+            filedName: filedName
+          });
+        }
       });
       this.emitEvent('onChange', this.param);
     },

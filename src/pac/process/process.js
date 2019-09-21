@@ -4,6 +4,7 @@ var response = {
   spiderConversionConfigs: []
 }
 
+var articleTypes = ['articleTime', 'author', 'content', 'source', 'title'];
 
 $(function () {
   $('.sx').click(function () {
@@ -11,7 +12,7 @@ $(function () {
     if (!datas) {
       datas = response;
     }
-    console.log('datas', datas);
+    // console.log('datas', datas);
     var process = new Process('.modal-wrap', {
       initialDatas: datas,
       onInit: function () {
@@ -44,91 +45,65 @@ $(function () {
       },
       onChange: function (params) {
         console.log('onChange', params);
+        var that = this;
+        /*var p = {
+          articleVo: {
+            title: 'aaaa'
+          },
+          spiderConversionConfigs: [
+            {
+              filedName: 'title',
+              conversionCode: 5,
+              conversionType: '固定值',
+              param: "{forceCoverChar: '值'}"
+            }
+          ]
+        }*/
+        $.ajax({
+          type: 'post',
+          url: 'http://192.168.212.48:8080/api/article/conversion',
+          contentType: 'application/json',
+          data: JSON.stringify(params),
+          success: function(res){
+            console.log('ok');
+            var response = res.response || null;
+            var after = '';
+            if (response) {
+              articleTypes.forEach(function (item) {
+                if (response[item]) {
+                  after = response[item];
+                }
+              });
+              that.setText(after, 'after');
+            }
+          }
+        });
         // localStorage.setItem('steps-record', JSON.stringify(params));
       }
     });
 
 
-    /*// 设值
-    setTimeout(function () {
-      process.setText('aaa', 'after');
-    }, 1000);*/
-  });
 
-
-
-/*
-  $('.hx').click(function () {
-    response = {
-      articleVo: {title: 'e'},
-      before: 'aa',
-      after: 'bb',
-      spiderConversionConfigs: [
-        {
-          conversionCode: 2,
-          conversionType: '添加后缀',
-          filedName: 'title',
-          param: { postfix: 'bbb' }
-        },
-        {
-          conversionCode: 1,
-          conversionType: '添加前缀',
-          filedName: 'title',
-          param: { prefix: 'aaa' }
-        },
-
-        {
-          conversionCode: 3,
-          conversionType: '文本替换',
-          filedName: 'title',
-          param: { newChar: 'aaa', oldChar: 'bbb' }
-        },
-        {
-          conversionCode: 5,
-          conversionType: '固定值',
-          filedName: 'title',
-          param: { forceCoverChar: 'aaa' }
-        },
-      ]
-    }
-    var process = new Process('.modal-wrap', {
-      initialDatas: response,
-      onInit: function () {
-        console.log('init');
-        $( ".modal-wrap" ).dialog({
-          width: 450,
-          // height: 500,
-          // modal: true,
-          resizable: false,
-          closeOnEscape: false,
-          title: "数据处理",
-          buttons: [
-            {
-              text: '取消',
-              click: function() {
-                $(this).dialog("close");
-              }
-            },
-            {
-              text: '确定',
-              click: function() {
-                $(this).dialog("close");
-              }
+    // 初始化调接口
+    $.ajax({
+      type: 'post',
+      url: 'http://192.168.212.48:8080/api/article/conversion',
+      contentType: 'application/json',
+      data: JSON.stringify(datas),
+      success: function(res){
+        console.log('ok');
+        var response = res.response || null;
+        var after = '';
+        if (response) {
+          articleTypes.forEach(function (item) {
+            if (response[item]) {
+              after = response[item];
             }
-          ]
-        });
-      },
-      onChange: function (params) {
-        console.log('onChange', params);
+          });
+          process.setText(after, 'after');
+        }
       }
     });
 
-
-    /!*!// 设值
-    setTimeout(function () {
-      process.setText('aaa', 'after');
-    }, 1000);*!/
-  });*/
-
-
+  });
 });
