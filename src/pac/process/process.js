@@ -249,7 +249,7 @@ $(function () {
     var currentCoversion = selectedConversions[highlightConversionIndex];
     var paramCopy = $.extend({}, currentCoversion.param);
     var paramKeys = currentCoversion.paramKeys;
-    currentCoversion.param = makeParam(paramKeys, [this.value, paramCopy[paramKeys[1]]]);
+    currentCoversion.param = makeParam(paramKeys, [this.value, paramCopy[paramKeys[1]] || '']);
     // console.log('onTextSourceBlur', currentCoversion);
     onParamChange();
   }
@@ -259,11 +259,12 @@ $(function () {
     var currentCoversion = selectedConversions[highlightConversionIndex];
     var paramCopy = $.extend({}, currentCoversion.param);
     var paramKeys = currentCoversion.paramKeys;
-    currentCoversion.param = makeParam(paramKeys, [paramCopy[paramKeys[0]], this.value]);
+    currentCoversion.param = makeParam(paramKeys, [paramCopy[paramKeys[0]] || '', this.value]);
     // console.log('onTextTargetBlur', currentCoversion);
     onParamChange();
   }
 
+  // 调接口
   function onParamChange() {
     console.log('onParamChange', selectedConversions);
     var param = {
@@ -291,6 +292,8 @@ $(function () {
     return result;
   }
 
+
+  // 设置文本
   function setText(text, type) {
     var trueType = type || 'before';
     var trueText = text || '';
