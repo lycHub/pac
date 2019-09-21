@@ -69,7 +69,7 @@ $(function () {
         $( ".modal-wrap" ).dialog({
           width: 650,
           // height: 500,
-          modal: true,
+          // modal: true,
           resizable: false,
           closeOnEscape: false,
           title: "数据筛选",
@@ -163,7 +163,7 @@ $(function () {
         var that = this;
         $( ".modal-wrap" ).dialog({
           width: 650,
-          modal: true,
+          // modal: true,
           buttons: [
             {
               text: '取消',

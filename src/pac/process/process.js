@@ -63,7 +63,7 @@ $(function () {
   $(".modal-wrap").dialog({
     width: 450,
     // height: 500,
-    modal: true,
+    // modal: true,
     resizable: false,
     closeOnEscape: false,
     title: "数据处理",
@@ -108,6 +108,8 @@ $(function () {
 
   var stepPanel = el.find('.pc-process .operate-area .list-group');
   var stepInfo = el.find('.pc-process .step-info');
+  var processBefore = el.find('.pc-process .process-bef');
+  var processAfter = el.find('.pc-process .process-af');
 
   initEvents();
   function initEvents() {
@@ -219,7 +221,7 @@ $(function () {
 
   // 更换tpl
   function renderTpl(tpl, param) {
-    console.log('tpl', tpl, param);
+    // console.log('tpl', tpl, param);
     stepInfo.find('.area').remove();
     stepInfo.append(stepInfoTpl(tpl.use, param));
     // console.log(stepInfoTpl(tpl.use));
@@ -228,7 +230,6 @@ $(function () {
 
   // 普通文本域变化
   function onTextBlur() {
-
     // console.log('onTextBlur', highlightConversionIndex);
     // console.log('val', this.value);
     console.log('selectedConversions', selectedConversions);
@@ -238,12 +239,20 @@ $(function () {
 
   // 替换框1变化
   function onTextSourceBlur() {
-    console.log('onTextSourceBlur');
+    var currentCoversion = selectedConversions[highlightConversionIndex];
+    var paramCopy = $.extend({}, currentCoversion.param);
+    var paramKeys = currentCoversion.paramKeys;
+    currentCoversion.param = makeParam(paramKeys, [this.value, paramCopy[paramKeys[1]]]);
+    console.log('onTextSourceBlur', currentCoversion);
   }
 
   // 替换框2变化
   function onTextTargetBlur() {
-    console.log('onTextTargetBlur');
+    var currentCoversion = selectedConversions[highlightConversionIndex];
+    var paramCopy = $.extend({}, currentCoversion.param);
+    var paramKeys = currentCoversion.paramKeys;
+    currentCoversion.param = makeParam(paramKeys, [paramCopy[paramKeys[0]], this.value]);
+    console.log('onTextTargetBlur', currentCoversion);
   }
 
   // [p1, p2] [v1, v2]
