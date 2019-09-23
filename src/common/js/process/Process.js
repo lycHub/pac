@@ -197,7 +197,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
       this.selectedConversions.splice(toIndex, 1, this.selectedConversions.splice(fromIndex, 1 , this.selectedConversions[toIndex])[0]);
       this.highlightConversionIndex = toIndex;
       this.renderSteps();
-      this.onParamChange();
+      this.onParamChange(toIndex);
     },
 
 
@@ -307,7 +307,8 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 调接口
     onParamChange: function (index) {
-      var limitIndex = index || 0;
+      // var limitIndex = index || null;
+      var limit = typeof index === 'number';
       if (!this.articleVo || $.isEmptyObject(this.articleVo)) return;
       var filedName = '';
       for (var attr in this.articleVo) {
@@ -315,22 +316,24 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
           filedName = attr || 'title';
         }
       }
-      this.param = {
+      var tempParam = {
         articleVo: this.articleVo,
         spiderConversionConfigs: []
       };
-      var that = this;
-      this.selectedConversions.forEach(function (item, index) {
-        if (!limitIndex || index <= limitIndex) {
-          that.param.spiderConversionConfigs.push({
-            conversionCode: item.conversionCode,
-            conversionType: item.conversionType,
-            param: JSON.stringify(item.param),
-            filedName: filedName
-          });
-        }
+
+      this.selectedConversions.forEach(function (item) {
+        tempParam.spiderConversionConfigs.push({
+          conversionCode: item.conversionCode,
+          conversionType: item.conversionType,
+          param: JSON.stringify(item.param),
+          filedName: filedName
+        });
       });
-      this.emitEvent('onChange', this.param);
+      this.param = $.extend({}, tempParam);
+      if (limit) {
+        tempParam.spiderConversionConfigs = tempParam.spiderConversionConfigs.slice(0, index + 1);
+      }
+      this.emitEvent('onChange', tempParam);
     },
 
 

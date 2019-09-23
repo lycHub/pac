@@ -1,0 +1,37 @@
+.screen-wrap {
+
+}
+.screen-wrap .caption{
+  padding: 10px 0;
+}
+
+.screen-wrap .caption .btn-group {
+  float: left;
+}
+.screen-wrap .caption .select {
+  float: right;
+}
+
+
+.screen-wrap .screen-table-wrap {
+  height: 400px;
+  overflow-y: auto;
+}
+
+
+.screen-wrap .screen-table-wrap .screen-table th{
+  text-align: center;
+}
+
+.screen-wrap .screen-table-wrap .screen-table .min80{
+  min-width: 80px;
+}
+.screen-wrap .screen-table-wrap .screen-table .min100{
+  min-width: 100px;
+}
+.screen-wrap .screen-table-wrap .screen-table .min120{
+  min-width: 120px;
+}
+.screen-wrap .screen-table-wrap .screen-table .hide{
+  visibility: hidden;
+}

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+	<title>hehe</title>
+	<meta name="description" content="Dashboard">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="http://a.mysteelcdn.com/libs/mysteelUI/assets/img/favicon.png" type="image/x-icon">
+
+	<!--Basic基础 Styles-->
+	<link href="hehe_files/bootstrap.css" rel="stylesheet">
+	<link id="bootstrap-rtl-link" href="" rel="stylesheet">
+	<link href="hehe_files/font-awesome.css" rel="stylesheet">
+	<link href="hehe_files/weather-icons.css" rel="stylesheet">
+	<!--bootstrapValidator Styles-->
+	<link href="hehe_files/docs.css" rel="stylesheet">
+	<!--Mysteel styles-->
+	<link id="mysteel-link" href="hehe_files/mysteel.css" rel="stylesheet" type="text/css">
+	<link href="hehe_files/demo.css" rel="stylesheet">
+	<link href="hehe_files/typicons.css" rel="stylesheet">
+	<link href="hehe_files/animate.css" rel="stylesheet">
+	<link href="hehe_files/main.css" rel="stylesheet" type="text/css">
+	<link id="skin-link" href="hehe_files/darkblue.css" rel="stylesheet" type="text/css">
+	<link href="hehe_files/metroStyle.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="hehe_files/docs.css">
+	<link rel="stylesheet" href="hehe_files/jquery.css">
+	<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+	<script src="hehe_files/skins.js"></script>
+	<script src="hehe_files/jquery-2.js"></script>
+	<script src="hehe_files/bootstrapValidator.js"></script>
+	<script src="hehe_files/layer.js"></script><link rel="stylesheet" href="hehe_files/layer.css" id="layuicss-layer">
+<script src="hehe_files/select.js"></script>
+<script src="hehe_files/lodash.js"></script>
+<script src="hehe_files/options.js"></script>
+<script src="hehe_files/utils.js"></script>
+<script src="hehe_files/templates.js"></script>
+<script src="hehe_files/ScreenTable.js"></script>
+<script src="hehe_files/jquery-ui.js"></script>
+<script src="hehe_files/config.js"></script>
+<!--调整模态框位置-->
+	<style>
+		.modal-dialog {
+            width: 600px;
+            margin: 200px auto;
+        }
+	</style>
+<link href="hehe_files/jquery-ui.css" rel="stylesheet">
+<link href="hehe_files/jquery-ui_002.css" rel="stylesheet">
+<link href="hehe_files/ScreenTable.css" rel="stylesheet">
+<style>
+    #navMenu,#advantageMenu{
+        background:yellow;
+        border:black solid;
+        width:300px;
+        height:500px;
+        position: fixed;
+        right: 50px;
+        top: 200px;
+    }
+    #advantageMenu{
+        width:600px;
+        right:350px;
+    }
+</style>
+</head><body><div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand topNav">
+                        <small>
+                            <img src="hehe_files/mylogo.png" alt="">
+                        </small>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+                <div class="pull-left navinfo">
+                    <div class="navbar-account">
+                        <ul class="sidebar-nav account-area">
+                            <li class="show">
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon fa fa-cogs"></i>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul id="topnav" class="pull-left themeprimary"><li><a class="dropdown-toggle" title="工作台" href="http://mgt.mysteelcms.com/gzt/" target="_self"><i data-original-title="工作台" class="icon fa fa-desktop "></i><span class="text ">工作台</span></a></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="报表" href="javascript:void(0);" target="_self"><i data-original-title="报表" class="icon fa fa-th-list "></i><span class="text ">报表</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="gray" href="http://mgt.mysteelcms.com/bb-cw" target="_blank"><i class="newicon">C</i>财务报表</a></li><li><a class="gray" href="http://mgt.mysteelcms.com/bb-dx" target="_blank"><i class="newicon">D</i>短信报表</a></li><li><a class="" href="https://mgt.mysteelcms.com/bb-hq/" target="_blank"><i class="newicon">H</i>行情报表</a></li><li><a class="gray" href="http://mgt.mysteelcms.com/bb-ht" target="_blank"><i class="newicon">H</i>合同报表</a></li><li><a class="" href="https://mgt.mysteelcms.com/bb-hy" target="_blank"><i class="newicon">H</i>会员报表</a></li><li><a class="" href="https://mgt.mysteelcms.com/bb-wz/" target="_blank"><i class="newicon">W</i>文章报表</a></li><li><a class="gray" href="http://mgt.mysteelcms.com/bb-yy" target="_blank"><i class="newicon">Y</i>运营报表</a></li></ul></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="资讯" href="javascript:void(0);" target="_self"><i data-original-title="资讯" class="icon fa fa-globe "></i><span class="text ">资讯</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="" href="https://mgt.mysteelcms.com/zx-bbgl/" target="_blank"><i class="newicon">B</i>报表管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/bdgl" target="_blank"><i class="newicon">B</i>榜单管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">D</i>短信管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/markettask/personaldetail/index" target="_blank"><i class="newicon">D</i>定岗定编</a></li><li><a class="" href="http://mgr.mysteelcms.com/black-mgt/myWorkbench/gotoWorkTask" target="_blank"><i class="newicon">D</i>大宗商品调研</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">H</i>行情管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/newsflash/index.htm" target="_blank"><i class="newicon">K</i>快讯管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">K</i>库存管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">S</i>手工管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/sjcjgl/index.htm" target="_blank"><i class="newicon">S</i>数据采集管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/tkjgzsgl/index.htm" target="_blank"><i class="newicon">T</i>铁矿价格指数管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/tsgs/common/index.ms" target="_blank"><i class="newicon">T</i>唐山钢坯管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/wzcjgl/index.htm" target="_blank"><i class="newicon">W</i>文章采集管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/wzgl" target="_blank"><i class="newicon">W</i>文章管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/daily/index.htm" target="_blank"><i class="newicon">Y</i>原料日报</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">Z</i>专题管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">Z</i>指数管理</a></li></ul></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="业务" href="javascript:void(0);" target="_self"><i data-original-title="业务" class="icon fa fa-group "></i><span class="text ">业务</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="" href="https://mgt.mysteelcms.com/dataapi/mydata/index" target="_blank"><i class="newicon">A</i>API对接服务</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">H</i>合同管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/mcollect/index.htm" target="_blank"><i class="newicon">H</i>行情采价管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/mbs/checking/checking_futures_list.htm?from=changeMain6" target="_blank"><i class="newicon">M</i>MBS</a></li><li><a class="" href="http://mgt.mysteelcms.com/vipxxfw/index.htm" target="_blank"><i class="newicon">V</i>VIP信息服务</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">Y</i>用户管理</a></li><li><a class="" href="http://mgt.mysteelcms.com/ipgl/index.htm" target="_blank"><i class="newicon">Y</i>IP管理</a></li></ul></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="运营" href="javascript:void(0);" target="_self"><i data-original-title="运营" class="icon fa fa-envelope "></i><span class="text ">运营</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="" href="https://mgt.mysteelcms.com/gggl" target="_blank"><i class="newicon">G</i>广告管理</a></li><li><a class="" href="https://mgt-gt.mysteelcms.com/trade/index" target="_blank"><i class="newicon">G</i>钢银可视化</a></li><li><a class="" href="https://mgt-yy.mysteelcms.com/dailywork/dailywork-list.ms?original=original" target="_blank"><i class="newicon">G</i>工作管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">H</i>黑名单管理</a></li><li><a class="" href="https://mgt-yy.mysteelcms.com/visit/daily-analyse-report/daily-report" target="_blank"><i class="newicon">L</i>流量统计-百度</a></li><li><a class="" href="https://mgt-yy.mysteelcms.com/mobile" target="_blank"><i class="newicon">L</i>流量统计-手机版</a></li><li><a class="" href="https://mgt-yy.mysteelcms.com/webSite-static/flowanalysis" target="_blank"><i class="newicon">L</i>流量统计-主站</a></li><li><a class="" href="https://mgt.mysteelcms.com/outside/sitemap/" target="_blank"><i class="newicon">S</i>sitemap</a></li><li><a class="" href="https://mgr.mysteelcms.com/income/" target="_blank"><i class="newicon">S</i>收入统计报表</a></li><li><a class="" href="http://mgt.mysteelcms.com/tpgl" target="_blank"><i class="newicon">T</i>投票管理</a></li><li><a class="" href="https://mgt.mysteelcms.com/yygj/md5/" target="_blank"><i class="newicon">W</i>违规图片查询</a></li><li><a class="" href="https://mgt.mysteelcms.com/wxsjtj" target="_blank"><i class="newicon">W</i>微信数据统计</a></li><li><a class="" href="http://mgt.mysteelcms.com/yjfk/" target="_blank"><i class="newicon">Y</i>意见反馈</a></li></ul></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="产品" href="javascript:void(0);" target="_self"><i data-original-title="产品" class="icon fa fa-sitemap "></i><span class="text ">产品</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="" href="https://mgt.mysteelcms.com/gldata/" target="_blank"><i class="newicon">G</i>钢联数据</a></li><li><a class="" href="https://mgt-hz.mysteelcms.com/index.htm" target="_blank"><i class="newicon">H</i>会展系统</a></li><li><a class="" href="https://mgt.mysteelcms.com/steelphone/index.htm" target="_blank"><i class="newicon">S</i>手机版</a></li><li><a class="" href="https://mgt-soso.mysteelcms.com/index.htm" target="_blank"><i class="newicon">S</i>搜搜钢</a></li><li><a class="" href="https://mgt.mysteelcms.com/mysteelglobal/index.htm" target="_blank"><i class="newicon">M</i>Mysteel Global</a></li><li><a class="" href="https://mgt.mysteelcms.com/wechatapplet/index.htm" target="_blank"><i class="newicon">W</i>微信小程序后台管理</a></li></ul></li><li><a class="dropdown-toggle" data-toggle="dropdown" title="财务" href="javascript:void(0);" target="_self"><i data-original-title="财务" class="icon fa fa-money "></i><span class="text ">财务</span><i class="dropdownicon fa fa-angle-down"></i></a><ul class="dropdown-menu dropdown-danger themeprimary dropdown-arrow"><li><a class="" href="https://mgt.mysteelcms.com/zc/index.htm" target="_blank"><i class="newicon">H</i>会务管理</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">S</i>收入</a></li><li><a class="gray" href="javascript:void(0);" target="_self"><i class="newicon">Y</i>预算</a></li></ul></li><li><a class="dropdown-toggle" title="系统" href="https://mgt.mysteelcms.com/xt/" target="_blank"><i data-original-title="系统" class="icon fa fa-wrench "></i><span class="text ">系统</span></a></li></ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Account Area and Settings -->
+                <div class="navbar-header pull-right userinfo">
+                    <div class="navbar-account">
+                        <ul class="account-area pull-right">
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img style="border-radius: 0;" src="hehe_files/share.json">
+                                    </div>
+                                    <section class="minW">
+                                        <h2><span class="profile">主体切换（钢联）</span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">上海钢联</a>
+                                    </li>
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">山东隆众</a>
+                                    </li>
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">中联钢</a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+
+                            <li>
+                                <a class="home dropdown-toggle" title="Tasks" href="#">
+                                    <span class="badge">0</span>
+                                    <i class="icon fa fa-bell-o"></i>
+                                    <span class="text">消息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="hehe_files/adam-jansen.jpg">
+                                    </div>
+                                    <section class="minW">
+                                        <h2><span class="profile">陈某某</span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">修改信息</a>
+                                    </li>
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">查看信息</a>
+                                    </li>
+                                    <li class="edit">
+                                        <a href="http://192.168.212.71:8080/pagespiderjob/profile.html">
+                                            <i class="icon glyphicon glyphicon-off"></i>
+                                            <span class="text">退出</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div><div class="main-container container-fluid">
+	<div class="page-container">
+<div class="page-sidebar" id="sidebar">
+    <ul class="nav sidebar-menu">
+                    <li class="">
+                <a href="javascript:void(0);" class="menu-dropdown">
+                    <i class="menu-icon fa fa-gear"></i>
+                    <span class="menu-text">
+                        文章管理
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="http://192.168.212.71:8080/content" class="changeMain">
+                                    <i class="newicon">N</i>
+                                    <span class="menu-text">内容管理</span>
+                                </a>
+                            </li>
+                        </ul>
+
+            </li>
+            <li class="">
+                <a href="javascript:void(0);" class="menu-dropdown">
+                    <i class="menu-icon fa fa-gear"></i>
+                    <span class="menu-text">
+                        采集配置管理
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="http://192.168.212.71:8080/pagespiderjob" class="changeMain">
+                                    <i class="newicon">W</i>
+                                    <span class="menu-text">网页爬虫</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="http://192.168.212.71:8080/wechat-spider" class="changeMain">
+                                    <i class="newicon">W</i>
+                                    <span class="menu-text">微信爬虫</span>
+                                </a>
+                            </li>
+                        </ul>
+
+            </li>
+            <li class="">
+                <a href="javascript:void(0);" class="menu-dropdown">
+                    <i class="menu-icon fa fa-gear"></i>
+                    <span class="menu-text">
+                        系统管理
+                    </span>
+                    <i class="menu-expand"></i>
+                </a>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="http://192.168.212.71:8080/spidercatalog/list" class="changeMain">
+                                    <i class="newicon">F</i>
+                                    <span class="menu-text">分类管理</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="http://192.168.212.71:8080/newsfeed" class="changeMain">
+                                    <i class="newicon">X</i>
+                                    <span class="menu-text">新闻源管理</span>
+                                </a>
+                            </li>
+                        </ul>
+
+            </li>
+    </ul>
+</div><div class="page-content">
+    <div class="page-header page-breadcrumbs">
+        <ul id="breadcrumb" class="breadcrumb">
+            <li><i class="fa fa-home">&nbsp;</i><a class="opencp" href="javascript:void(0);" onclick="window.parent.openYwMune();">资讯</a></li>
+            <li><a href="http://192.168.212.71:8080/tkjgzsgl/index.htm" target="_top">铁矿价格指数管理</a></li>
+
+
+            <li>权限提示</li>
+
+
+        </ul>
+
+    </div>
+    <div class="page-body" style="padding: 10px 5px;">
+        <div class="row">
+    <div class="col-sm-4 form-horizontal">
+        <label class="control-label col-sm-2">地址：</label>
+        <div class="col-sm-10">
+            <input class="form-control disabled " id="url" name="url" required="" type="text" value="http://www.nc.gov.cn/ncszf/szfwj/nav_list_3.shtml" disabled="disabled">
+            <input id="catalogId" type="hidden" value="1">
+            <input id="name" type="hidden" value="爬虫">
+            <input id="newsfeedId" type="hidden" value="1">
+            <input id="ownerId" type="hidden" value="1">
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <iframe id="mainiframe" onload="startInit()" src="" scrolling="auto" srcdoc="&lt;!doctype html&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;link href=&quot;http://www.nc.gov.cn/ncszf/xhtml/css/pager.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; 
+  &lt;meta charset=&quot;UTF-8&quot;&gt; 
+  &lt;title&gt;
+			市政府文件 -
+			南昌市人民政府
+		&lt;/title&gt; 
+  &lt;meta name=&quot;others&quot; content=&quot;页面生成时间 2019-09-16 19:10:01&quot;&gt; 
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt; 
+  &lt;meta name=&quot;SiteName&quot; content=&quot;南昌市人民政府&quot;&gt; 
+  &lt;meta name=&quot;SiteDomain&quot; content=&quot;www.nc.gov.cn&quot;&gt; 
+  &lt;meta name=&quot;SiteIDCode&quot; content=&quot;3601000001&quot;&gt; 
+  &lt;meta name=&quot;ColumnName&quot; content=&quot;市政府文件&quot;&gt; 
+  &lt;meta name=&quot;ColumnDescription&quot; content=&quot;市政府文件&quot;&gt; 
+  &lt;meta name=&quot;ColumnKeywords&quot; content=&quot;市政府文件&quot;&gt; 
+  &lt;meta name=&quot;ColumnType&quot; content=&quot;市政府文件&quot;&gt; 
+  &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt; 
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://www.nc.gov.cn/ncszf/xhtml/css/public.css&quot;&gt; 
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://www.nc.gov.cn/ncszf/xhtml/css/wl_css.css&quot;&gt;   
+ &lt;/head&gt; 
+ &lt;body&gt; 
+  &lt;!-- top begin--&gt; 
+  &lt;iframe width=&quot;100%&quot; height=&quot;233&quot; src=&quot;http://www.nc.gov.cn/ncszf/top/top.shtml&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt; 
+  &lt;!-- top end--&gt; 
+  &lt;!-- content --&gt; 
+  &lt;div class=&quot;w1000 clear &quot; style=&quot;margin: 20px auto; background: #FFFFFF;&quot;&gt; 
+   &lt;div class=&quot;list_left left&quot;&gt; 
+    &lt;div class=&quot;boxs mb10 chanel&quot;&gt; 
+     &lt;div class=&quot;tt f16 white chanel-title bold white&quot;&gt;
+       政策文件 
+     &lt;/div&gt; 
+     &lt;div class=&quot;zh&quot;&gt; 
+      &lt;ul&gt; 
+       &lt;li&gt; &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list.shtml&quot; target=&quot;_parent&quot; title=&quot;市政府文件&quot;&gt;市政府文件&lt;/a&gt; &lt;/li&gt; 
+       &lt;li&gt; &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfbgtwj/nav_list.shtml&quot; target=&quot;_parent&quot; title=&quot;市政府办公厅文件&quot;&gt;市政府办公厅文件&lt;/a&gt; &lt;/li&gt; 
+       &lt;li&gt; &lt;a href=&quot;http://www.nc.gov.cn/ncszf/bmwj/nav_list.shtml&quot; target=&quot;_parent&quot; title=&quot;部门文件&quot;&gt;部门文件&lt;/a&gt; &lt;/li&gt; 
+       &lt;li&gt; &lt;a href=&quot;http://www.nc.gov.cn/ncszf/qxwj/nav_list.shtml&quot; target=&quot;_parent&quot; title=&quot;县区文件&quot;&gt;县区文件&lt;/a&gt; &lt;/li&gt; 
+       &lt;li&gt; &lt;a href=&quot;http://www.nc.gov.cn/ncszf/wjxgfzqk/nav_list.shtml&quot; target=&quot;_parent&quot; title=&quot;文件修改废止情况&quot;&gt;文件修改废止情况&lt;/a&gt; &lt;/li&gt; 
+      &lt;/ul&gt; 
+     &lt;/div&gt; 
+    &lt;/div&gt; 
+    &lt;div class=&quot;boxs mb10 chanel1&quot; style=&quot;display: none;&quot;&gt; 
+     &lt;div class=&quot;tt f18 white&quot;&gt;
+       市政府文件 
+     &lt;/div&gt; 
+     &lt;div class=&quot;zh&quot;&gt; 
+      &lt;ul&gt; 
+      &lt;/ul&gt; 
+     &lt;/div&gt; 
+    &lt;/div&gt; 
+   &lt;/div&gt;  
+   &lt;div class=&quot;list_right right&quot; style=&quot;width: 864px;&quot;&gt; 
+    &lt;div class=&quot;tt-list&quot;&gt; 
+     &lt;div class=&quot;left tzgg_tit&quot; style=&quot;margin-top:8px;&quot;&gt;&lt;/div&gt; 
+     &lt;div class=&quot;tt left f18 bold parleft15&quot;&gt;
+       市政府文件 
+     &lt;/div&gt; 
+     &lt;div class=&quot;list-home right&quot;&gt;
+       您当前所在位置：首页 &amp;gt; 市政府文件 
+     &lt;/div&gt; 
+     &lt;div class=&quot;clear1&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt; 
+    &lt;div class=&quot;clear1&quot;&gt;&lt;/div&gt; 
+    &lt;div class=&quot;cont mt10&quot;&gt; 
+     &lt;ul class=&quot;item lh jt_dott f14&quot;&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/qtygwj/201805/377718896dc64d59b405bce38ab2a509.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于市政府领导分工的通知&quot;&gt;南昌市人民政府关于市政府领导分工的通知&lt;/a&gt; &lt;span&gt; 2018-05-31 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/gfxwj/201805/06f6fa2e78444a048d73f5acabed9ddd.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于提高我市城乡困难群众保障标准的通知&quot;&gt;南昌市人民政府关于提高我市城乡困难群众保障标准的通知&lt;/a&gt; &lt;span&gt; 2018-05-23 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/gggs/201805/478d04649de442f79d2a25c391a3c684.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于提高我市城乡困难群众保障标准的通知&quot;&gt;南昌市人民政府关于提高我市城乡困难群众保障标准的通知&lt;/a&gt; &lt;span&gt; 2018-05-23 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/qtygwj/201805/9a25b0deab6d428d80ed1148850ff230.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府印发关于2018年南昌市重大重点项目投资计划的通知&quot;&gt;南昌市人民政府印发关于2018年南昌市重大重点项目投资计划的通知&lt;/a&gt; &lt;span&gt; 2018-05-22 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/gggs/201805/3877ef04417c487c8673d73e57442815.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于聘请尹志尧博士为市政府科技顾问的批复&quot;&gt;南昌市人民政府关于聘请尹志尧博士为市政府科技顾问的批复&lt;/a&gt; &lt;span&gt; 2018-04-27 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/gfxwj/201805/0f39c52e83604f4999760128e10f349f.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府办公厅关于印发中国（南昌）知识产权保护中心紧缺急需人才计划实施暂行办法的通知&quot;&gt;南昌市人民政府办公厅关于印发中国（南昌）知识产权保护中心紧缺急需人才计划实施...&lt;/a&gt; &lt;span&gt; 2018-04-26 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/fghgz/201810/531a886773834daab53dcfd032fec7b1.shtml&quot; target=&quot;_blank&quot; title=&quot;江西省湖泊保护条例&quot;&gt;江西省湖泊保护条例&lt;/a&gt; &lt;span&gt; 2018-04-02 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/1281506b785244069e1359f77c86c02a.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于刘承万等同志免职的通知&quot;&gt;南昌市人民政府关于刘承万等同志免职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/e2e94855c8ce4829aea8038cdf14859e.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于万秀奇等同志职务任免的通知&quot;&gt;南昌市人民政府关于万秀奇等同志职务任免的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/91597f3797594e8a91e50f1e3251eb74.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于胡足卿等同志任职的通知&quot;&gt;南昌市人民政府关于胡足卿等同志任职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/b052b211594b42d39fcbd8d22f82e7a0.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于黄卫东等同志免职的通知&quot;&gt;南昌市人民政府关于黄卫东等同志免职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/f05c5a50bfeb4ce490c596cdeb4d78e7.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于彭严明同志正式任职的通知&quot;&gt;南昌市人民政府关于彭严明同志正式任职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/99b5b0b03bb44bacbcd925bac65b58b0.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于王湧等同志正式任职的通知&quot;&gt;南昌市人民政府关于王湧等同志正式任职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/rsrm/201806/6537de720bc140189180d5f271a136ba.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于郭晓流等同志免职的通知&quot;&gt;南昌市人民政府关于郭晓流等同志免职的通知&lt;/a&gt; &lt;span&gt; 2018-02-08 &lt;/span&gt; &lt;/li&gt; 
+      &lt;li&gt;· &lt;a href=&quot;http://www.nc.gov.cn/xxgkpt/qtygwj/201805/6a0fc0a2926847648af1cc1bb5271f7a.shtml&quot; target=&quot;_blank&quot; title=&quot;南昌市人民政府关于进一步加强文物工作的实施意见&quot;&gt;南昌市人民政府关于进一步加强文物工作的实施意见&lt;/a&gt; &lt;span&gt; 2018-02-02 &lt;/span&gt; &lt;/li&gt;  
+     &lt;/ul&gt; 
+     &lt;div id=&quot;page_div&quot; class=&quot;mt20&quot;&gt;
+      &lt;div class=&quot;pagination_index&quot;&gt;
+       &lt;span class=&quot;arrow&quot;&gt;&lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list.shtml&quot;&gt;首页&lt;/a&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index&quot;&gt;
+       &lt;span class=&quot;arrow&quot;&gt;&lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_2.shtml&quot;&gt;上一页&lt;/a&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num&quot;&gt;
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list.shtml&quot;&gt;1&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num&quot;&gt;
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_2.shtml&quot;&gt;2&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num currentIndex&quot;&gt;
+       3
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num&quot;&gt;
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_4.shtml&quot;&gt;4&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num&quot;&gt;
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_5.shtml&quot;&gt;5&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_num&quot;&gt;
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_6.shtml&quot;&gt;6&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index&quot;&gt;
+       &lt;span class=&quot;arrow&quot;&gt;&lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_4.shtml&quot;&gt;下一页&lt;/a&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index&quot;&gt;
+       &lt;span class=&quot;arrow&quot;&gt;&lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_106.shtml&quot;&gt;末页&lt;/a&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;pagination_index_last&quot;&gt;
+       第 3 页 转
+       &lt;input name=&quot;pagination_input&quot; id=&quot;pagination_input&quot;&gt;页 
+       &lt;a href=&quot;http://www.nc.gov.cn/ncszf/szfwj/nav_list_3.shtml#&quot; onclick=&quot;pagination_go('nav_list','shtml','106')&quot;&gt;GO&lt;/a&gt; 共 1589 条 共 106 页
+      &lt;/div&gt;
+     &lt;/div&gt; 
+    &lt;/div&gt; 
+   &lt;/div&gt; 
+   &lt;div class=&quot;clear1&quot;&gt;&lt;/div&gt; 
+  &lt;/div&gt; 
+  &lt;!-- bottom begin--&gt; 
+  &lt;iframe width=&quot;100%&quot; height=&quot;150&quot; src=&quot;http://www.nc.gov.cn/ncszf/bottom/bottom.shtml&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt; 
+  &lt;!-- bottom end--&gt;   
+ &lt;/body&gt;
+&lt;/html&gt;" width="100%" height="600px" frameborder="0"></iframe>
+</div>
+<!--listTable-->
+<div class="row">
+    <div class="pull-right">
+        <button class="btn btn-small btn-primary" style="display:none">数据处理</button>
+        <button class="btn btn-small btn-primary" style="display:none" id="filterBtn">数据筛选</button>
+        <button class="btn btn-small btn-primary" style="display:none">清空所有</button>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-striped table-hover table-bordered text-align-center" id="listTableHeader" style="display: table;" hidden="">
+        <thead>
+        <tr>
+            <td>文章标题</td>
+            <td>链接</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="row" style="max-height:190px;overflow-y:auto">
+    <table class="table table-striped table-hover table-bordered text-align-center" id="listTable" style="display: table;" hidden="">
+        <tbody><tr><td>南昌市人民政府关于市政府领导分工的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/qtygwj/201805/377718896dc64d59b405bce38ab2a509.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/qtygwj/201805/377718896dc64d59b405bce38ab2a509.shtml</td></tr><tr><td>南昌市人民政府关于提高我市城乡困难群众保障标准的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/gfxwj/201805/06f6fa2e78444a048d73f5acabed9ddd.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/gfxwj/201805/06f6fa2e78444a048d73f5acabed9ddd.shtml</td></tr><tr><td>南昌市人民政府关于提高我市城乡困难群众保障标准的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/gggs/201805/478d04649de442f79d2a25c391a3c684.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/gggs/201805/478d04649de442f79d2a25c391a3c684.shtml</td></tr><tr><td>南昌市人民政府印发关于2018年南昌市重大重点项目投资计划的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/qtygwj/201805/9a25b0deab6d428d80ed1148850ff230.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/qtygwj/201805/9a25b0deab6d428d80ed1148850ff230.shtml</td></tr><tr><td>南昌市人民政府关于聘请尹志尧博士为市政府科技顾问的批复</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/gggs/201805/3877ef04417c487c8673d73e57442815.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/gggs/201805/3877ef04417c487c8673d73e57442815.shtml</td></tr><tr><td>南昌市人民政府办公厅关于印发中国（南昌）知识产权保护中心紧缺急需人才计划实施...</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/gfxwj/201805/0f39c52e83604f4999760128e10f349f.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/gfxwj/201805/0f39c52e83604f4999760128e10f349f.shtml</td></tr><tr><td>江西省湖泊保护条例</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/fghgz/201810/531a886773834daab53dcfd032fec7b1.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/fghgz/201810/531a886773834daab53dcfd032fec7b1.shtml</td></tr><tr><td>南昌市人民政府关于刘承万等同志免职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/1281506b785244069e1359f77c86c02a.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/1281506b785244069e1359f77c86c02a.shtml</td></tr><tr><td>南昌市人民政府关于万秀奇等同志职务任免的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/e2e94855c8ce4829aea8038cdf14859e.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/e2e94855c8ce4829aea8038cdf14859e.shtml</td></tr><tr><td>南昌市人民政府关于胡足卿等同志任职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/91597f3797594e8a91e50f1e3251eb74.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/91597f3797594e8a91e50f1e3251eb74.shtml</td></tr><tr><td>南昌市人民政府关于黄卫东等同志免职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/b052b211594b42d39fcbd8d22f82e7a0.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/b052b211594b42d39fcbd8d22f82e7a0.shtml</td></tr><tr><td>南昌市人民政府关于彭严明同志正式任职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/f05c5a50bfeb4ce490c596cdeb4d78e7.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/f05c5a50bfeb4ce490c596cdeb4d78e7.shtml</td></tr><tr><td>南昌市人民政府关于王湧等同志正式任职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/99b5b0b03bb44bacbcd925bac65b58b0.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/99b5b0b03bb44bacbcd925bac65b58b0.shtml</td></tr><tr><td>南昌市人民政府关于郭晓流等同志免职的通知</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/rsrm/201806/6537de720bc140189180d5f271a136ba.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/rsrm/201806/6537de720bc140189180d5f271a136ba.shtml</td></tr><tr><td>南昌市人民政府关于进一步加强文物工作的实施意见</td><td onclick="initDetail('http://www.nc.gov.cn/xxgkpt/qtygwj/201805/6a0fc0a2926847648af1cc1bb5271f7a.shtml')" style="cursor:pointer">http://www.nc.gov.cn/xxgkpt/qtygwj/201805/6a0fc0a2926847648af1cc1bb5271f7a.shtml</td></tr></tbody>
+    </table>
+</div>
+<!--detailTable-->
+<div class="row">
+    <table class="table table-striped table-hover table-bordered text-align-center" id="detailTableHeader" style="display: none;" hidden="">
+        <thead>
+        <tr>
+            <td style="width:200px">标题</td>
+            <td style="width:200px">来源</td>
+            <td style="width:200px">作者</td>
+            <td style="width:200px">时间</td>
+            <td>正文</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="row" style="max-height:190px;overflow-y:auto">
+    <table class="table table-striped table-hover table-bordered text-align-center" id="detailTable" style="display: none;" hidden="">
+        <tbody>
+            <tr>
+                <td style="width:200px"></td>
+                <td style="width:200px"></td>
+                <td style="width:200px"></td>
+                <td style="width:200px"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--高级菜单-->
+<div id="advantageMenu" style="display: block;" hidden="">
+    <div class="row" name="menuList" style="display: block;">
+        <div class="row">
+            <button class="btn btn-small btn-primary" name="pagingBtn">设置列表分页</button><span class="step">4</span>
+        </div>
+    </div>
+    <!--分页设置表单-->
+    <div class="row" name="pagingBox" style="display: none;" hidden="">
+        <form action="" method="post" class="form-horizontal bv-form" id="pagingForm" novalidate="novalidate">
+            <div class="form-group has-feedback">
+                <label class="col-sm-3 control-label">分页方式</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="pagingType" data-bv-field="pagingType">
+                        <option value="4" selected="selected">点击翻页</option>
+                        <!--<option value="3">滚动翻页</option>-->
+                    </select><i style="display: none;" class="form-control-feedback" data-bv-field="pagingType"></i>
+                <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="pagingType" class="help-block">分页方式不能为空</small></div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="col-sm-3 control-label">下一页按钮</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="xpath" placeholder="下一页按钮的xpath在此" readonly="readonly" data-bv-field="xpath" value="//body/div[contains(@class,&quot;w1000&quot;)]/div[contains(@class,&quot;list_right&quot;)]/div[contains(@class,&quot;cont&quot;)]/div[@id=&quot;page_div&quot;]/div[contains(@class,&quot;pagination_index&quot;)][3]/span[contains(@class,&quot;arrow&quot;)]/a"><i style="display: none;" class="form-control-feedback" data-bv-field="xpath"></i>
+                    <button class="btn btn-small btn-primary" name="selectPagingBtn" type="button" data-bv-field="selectPagingBtn">选择下一页按钮</button><i style="display: none;" class="form-control-feedback" data-bv-field="selectPagingBtn"></i>
+                <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="xpath" class="help-block">下一页按钮xpath不能为空</small></div>
+            </div>
+            <div class="form-group has-feedback has-success">
+                <label class="col-sm-3 control-label">采集页数</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="limit" data-bv-field="limit" value="12"><i style="display: block;" class="form-control-feedback glyphicon glyphicon-ok" data-bv-field="limit"></i>
+                <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="limit" class="help-block">采集页数不能为空</small></div>
+            </div>
+            <div class="form-group has-feedback">
+                <button class="btn btn-small btn-primary" name="yesBtn" type="submit" id="pagingYesBtn" data-bv-field="yesBtn">确定</button><i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="yesBtn"></i>
+                <button class="btn btn-small btn-primary" name="noBtn" type="button" data-bv-field="noBtn">取消</button><i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="noBtn"></i>
+            </div>
+        </form>
+    </div>
+</div>
+<!--悬停菜单-->
+<div id="navMenu">
+    <div class="row" id="confirmBox" style="display: none;" hidden="">
+        <div class="red" style="font-size:24px" name="msg">列表是否选择完毕？</div>
+        <div>
+            <button class="btn btn-small btn-primary" id="yesBtn">是</button>
+            <button class="btn btn-small btn-primary" id="noBtn">否</button>
+        </div>
+    </div>
+    <div class="row" id="tipBox" style="display: block;" hidden="">
+        <div class="red" style="font-size:24px" name="msg">请根据左侧弹框提示进行配置，配置完成点击列表中的链接进入详情爬取配置！</div>
+    </div>
+    <div class="row" id="finishBtn" hidden="">
+        <button href="" class="btn btn-small btn-primary">完成</button>
+    </div>
+</div>
+<!--过滤组件-->
+<div id="filterTable" class="modal-wrap"></div>
+    </div>
+</div>	</div>
+</div>
+<script src="hehe_files/bootstrap.js"></script>
+<script src="hehe_files/mysteel.js"></script>
+<script src="hehe_files/bootbox.js"></script>
+<script src="hehe_files/common.js"></script>
+<script src="hehe_files/jquery_002.js"></script>
+<script src="hehe_files/jquery.js"></script>
+<script src="hehe_files/dataTablesWrap.js"></script>
+<script src="hehe_files/my.js"></script>
+<script type="text/javascript">
+	$(function () {
+		//点击菜单项关闭其他菜单项
+		$("ul.sidebar-menu>li").on("click",function(){
+			$(this).siblings().removeClass("open").find("ul").hide();
+		});
+	});
+</script>
+<div class="layui-layer-move"></div></body><div id="translate-button" style="background-color: white; box-shadow: rgb(221, 221, 221) 0px 0px 2px 2px; display: none;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAEgWuABIFrgFpirNTAAAMIUlEQVRo3s1Ze5RV1Xn//b597mMuw/CYEREwRhCVCisian1Q3joQQREhljSKrctXKIlpiHHFB9qoXTYrmiwa2rAqqUgaRFEBQSAIUtKFKChFCM+gCwGFgjAMM3PvOWfvr3/s+2KcQYxD9bvr3Hvufp3v9732/r4DnDL1Yfm/B3+7/lt3NOrXTn3+V4im/NuSpzer0z4vR92+bF4+N417eOGTr2RVb1+l+75sXk6ViqYz4f5Vc362T/Wa51Rr/0O393zwcOrLZi44Beb14lterLz62ze9JhkMfPUVaApgpxoYG7fTryIAAigwpoMfXHlm7+FDVxytQ989f1SkJNZUxrCySpzZvPALPl4J8AsJ4aQauOGXf7j0rMuvXvzhRnSJGiPNSKwWInGWqO4iqIrmSsszF+fNTgCMKmNwGQEDYES+7aMW5r5OYAuAegAPfCY4ttZx3+IPaw8neiza/0eXEImdVaWzSqdw6WRSzh/gtj91VeLCL6iCL0wlAFUdiWNHFQC+O++TW7/ev9OzixcAmURoARh1gMJBFS5IJKVdFffpwdW3c/9603vAGLQ/9wLNNmQZNRyFCQQE6ZyDDesJCpwCxqQYhQ1IVnbEwd3bUHfgPXY9/xJ1cYqII4RN9UhlKtFU18Tqc/pH7c7umE2mgA5GNWVs5t2tjVunT+iw+6QaqJ00fdrgqZMfWbqCSCK2RpyhAlAtU6eBYcCv/wVQmQJydQBNyXFYtjoJqPq+wgUHmCQgBrChH0MAFN9HAaIIUAcwBFIGqG6vePdPR2bMvbN68ujp+/nqlG4KNPOBm2ZvntG3z0X3rFoLaDa2psIZOEChJVcjQDpajbB9E2ER5BmPQYrnJs8oy+Bo2XdzuTV3YxIALQgHdUSkBj2qiT0fH2sEgLCprjjWAzjjEv7q4Ibfd6rD8KeegaYjp5kKNaoC4gTxk0o4eKmSzgUISxL2dlbiW0tQCOTXag6A5XdKev79A6kU0FinmaSR48caLADQ5YqrCzCeaPgA6369/OUDIZAWMEgJLcWvCPhod8Kt7xLmP+J/WTAGBeFYGOUnaeFePJtg/gMICCFghCKEvycohAiUhFII2NjmAEBdXK6BFxWNwOy7a3/18Z5fbr5gyPcW7Xsf7ZuOGSeBkogLMiygJgGlkEQAEpC85Qi9uRUsrYC6XO4Keu2VaUoVcK4gIUcfLIqap3X5yU5DnKDJZj6w/Invr+69PXvZoB/ct6xxL87Z+wE1mTBqxFJVy0BQTRCw5mzYVBo2QNH8aUBVgiyzGfWaY8E9VCEADAEVBzqFWgu6CHHDcQkOfwyNnFVQBXnQ3qycF0qZzzTfyLhz/o+3O1ReXPvD766sqUH/d98RFUdNBwUQQLqdkWQQ7944+9GRYf3eUG23hOoFqkF3QZDOP8/CxxEIoA5xJLCNIA454FBA1gVkHUVDVcT0ylOb6TW241mXjV3ELKrDMNZyd1GnrtyMWwKgAMyf5k8++u/rPrhy9KS7Fl4ztte1K9ZQG3Oi6VRMOCKZIlKJbLhx/mM70cZkdmc4dvhYZ0SYy8GBEJRCgwKALYPV0lHAApBw789yLz1+Xu3m362ZPX4kGFSI1DcFzlJos4qgQ6V0nfhass04F89L35seOqu6AhJmHcBShFUtid6Vyb2VswwccKEAwAtPDZr01rzNT948BKioEGkIjaMhXD1Ueo5sO9E7OADIdD2LQT0UqnCqeZ/zMGzkrf/Ms3sUvUBaX3GbAxIEgN8+0u/+pS99NPX6sUAqgEQWSBoEmfBw2wHIE2HV0gdaeIenZ1QRW4+kqqamdQ30HDnFlP5FRaQLHu32841LV44feR2Qi4CmCDkyaPN8oEONSVpFJ6WBiBR2SBpxsM55TZQ99VMA7rp3anLxrrrfdJ2yp/cJggEw+57h8/9n8Zxhg64DenTG+R07pm1bA3j/v98+mk3iUCoDiDFOqV4NqrCxtQBgy7j+FIAfjzyn6YpeVbeM6FfzBjDiU4e9eVNvWbV32dJrxtVi38XnJdu8KrFt5uVHNy1fMLKiG44l0mJoAgchnAJx5Me4svEt+sCUeXjj8hEV3YY//PLr+abS2QzAjLtHrZj20Jt9Nh/AkULbRQ+EreYWn5c2zRy7aeuSuYO790MuGRiRhHE0QGQlUWDmpAAYwaz8L2DgpMqhg3+wckUBBFkC8dpjVzatnSLFY+GWx5Nt6Q9c9/TEjbuWzBvS8zLYdNKIoUKdMQDgFCePQh0rYGxO8foSF/3lHUOHX/vDDUsAQPVETbQVDbtDywJH8RzLFT+9+c0tC+Zcc96lQJMN8EnW+1z5TtwigMBBq9IKzVmueA06aPIlo2p/tGkR0Cvwi/dpUxCjv4XO09/UZ3re9nZ3lMxVAWDV47es2rH0d9d+s5YYfGX3LgDQPv0ZAFSREKfIpJSJOIslr0KH3ttv9DfGTPxXP2Jrm4bP93blPmmo01uvmnjphg5/M78jTjRzrJj27d8f275x2t+N6RADwMyhPLkJUSEKAla1Mg1G9Tnu2AX06Desb1syXqDf3JO2uw/qH85owJkD/3rchv737Ti3+Zjbruj/j0/s1580b28ZAP1BWFUJB22fgdYfBj7cw7bfevNUn6VpCIHgI9ezX23vt0c8uqR/OUsAsP2bEp0SACklsj51UmoQAGDU5g5coFjJ400OYTa0B7e56j6jRq27dd6GofnuVk22ZQBShK35lIpIACY4ftoAJGsgsc8U6eJQ31vjEr2vumTljTPX33yyeS0f5ghR5zMwnwIV6h6HTlst1CXgHATqoAJQNXLLn3e4csiAudc9+tK9pZHBCUJsGYAArsSqUtXndmHDafOBI/vC40wiXxCAVgQQF0Vu8TLgukk3Pj3ue794zI+MVcr2otZqowQAEqpKEQPWfQTtPmDCIFu/Z0Z8vAG5hrQmqrqpMULSQGDgnF/cGAOoVdI6dbGN4iaqRoxtEwwBCmGjHAiDoF0Fwvjs2NbF/cIgUJCEAk5V21dQ6upDN3tRUr4z9fsPBJKumfeLu+92ZT7Rok3/w0J9Z/8B1/9oQ2ytwggIGxvNnCGs6gJoPhaQXqH5AkpZ3cJfIi2omIAt48ACCEPg6F6HOIzUSLGSRweqCFDXJGrTgUwYDbw1+93FL07/5zE4MldbBTBlqa4/+KEOqGuInFUI1dcjrALOiioUzmcaWgBSWKhYVIGyLJ6V7LEI1/9QfTlGaCl0oI8bDn478vIwYF0WqokE+30DOHAEGw68v//Ot6d2f6dFHwgTXkrO+nqN07zUVEHGFFomxDEQlUBUAqqYEy4nhkojjoaOBv4SOAa0NIz9LywFMYgYUAdVqFMqitVGzWtMtUOGzDVpvGMrMHkcBvS9tNuNrfoAFQwtkYsCFzuFeNMo5KZFYZcyv2LiWpR3oZqqILXYTxYrS8wXfQQqBI1YMSyd9AuPJAAR4ZF6xF/rhmDMQOC5f9nyyPM/n/ZTAGwRwJAuOG+LAz5pkMBab8tBXt1hCBgBTMIbiSuU3srrNwTo4CvNZYFXNV9hzE/RAMgFQM4CR/YGCBtjDQLHokDytbswhK3KmOD6EcSchxfetXrWDTP9ipXSIoD/XLT/n/YfqutxcOf7UcJEcaJdRkwiUwENTEV1Z6dKZA8fg/NFf1AIdf6kq+qIOFYGApAK56AkTEKUJOLI7+bJdEoDUc3u3Yo4JHqNvmlsu07J7rl6X07M1yapEGutMeMmMlo1d/WE1bNuWOC5/CsBDulp21k/L139wOEFvS7rfP3Hu0MHqiippDgJAnPRFWg8tPbVwc/+/Zj1fvTtBJ759PuBcrrrJaUm/OlHDVToX2K4OB8uU8CssmPtbSu1zP6BZ4dRb1vm26SZeaUzwNYPYrwx+y1g2dUKADXnd+pkGwClU6jAKTVTFZiuF+LgjiWvDFn00I1b81CLzAOnIbv6c+k7L+ua3GE38Eh9FFtF0LlLColqbNu1aFbt+hm378GJb0+L9FnviVul8S8oX5zQ8ivS8S+UtNHamOaUOwKTjQkVmHN7ppAzWLv8iftH/O+aJxvzQ770d9InpTEzde3fzlOdukZ1wnO6uGbgEwUhfGWs5KT0o1d056+3qF5157rZZc3mz17w/5PunaUyZ4vuHPaTLc9/Xub/D61PrC9fCdQYAAAAAElFTkSuQmCC"></div></html>

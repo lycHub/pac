@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<title>顶部</title>
+<meta name="others" content="页面生成时间 2018-12-28 09:37:13">
+		<link rel="stylesheet" href="public.css">
+		<script src="top_data/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="background: url(/ncszf/xhtml/images/bj02.jpg) no-repeat top #f0f0f0;">
+		<!--顶部-->
+		<div class="header">
+			<div class="banner clear">
+				<div class="logo">
+					<a href="http://www.nc.gov.cn/" target="_blank"><img src="top_data/logo_top.png"></a>
+				</div>
+				<div class="top_search">
+					<div class="keywords">
+						<span>热搜：</span>
+						<span id="hotword"><a target="_blank" style="font-size: 16px; color:#ffffff; padding:0px 5px;" href="http://so.kaipuyun.cn/s?q=1&amp;database=&amp;siteCode=3601000001&amp;qt=%E5%88%98%E5%BB%BA%E6%B4%8B">刘建洋</a><a target="_blank" style="font-size: 16px; color:#ffffff; padding:0px 5px;" href="http://so.kaipuyun.cn/s?q=1&amp;database=&amp;siteCode=3601000001&amp;qt=%E5%8D%81%E4%B9%9D%E5%A4%A7">十九大</a><a target="_blank" style="font-size: 16px; color:#ffffff; padding:0px 5px;" href="http://so.kaipuyun.cn/s?q=1&amp;database=&amp;siteCode=3601000001&amp;qt=%E5%8D%81%E4%B8%89%E4%BA%94">十三五</a><a target="_blank" style="font-size: 16px; color:#ffffff; padding:0px 5px;" href="http://so.kaipuyun.cn/s?q=1&amp;database=&amp;siteCode=3601000001&amp;qt=%E6%89%B6%E8%B4%AB">扶贫</a><a target="_blank" style="font-size: 16px; color:#ffffff; padding:0px 5px;" href="http://so.kaipuyun.cn/s?q=1&amp;database=&amp;siteCode=3601000001&amp;qt=%E5%85%AC%E7%A7%AF%E9%87%91">公积金</a></span>
+					</div>
+					<div class="search">
+						<form name="searchform" action="http://so.kaipuyun.cn/s" method="post" target="_blank">
+							<ul>
+								<li>
+									<input name="token" type="hidden" id="token">
+									<input name="siteCode" id="siteCode" value="3601000001" type="hidden">
+									<input name="database" id="database" value="all" type="hidden">
+									<input name="city" id="city" value="" type="hidden">
+									<input type="text" class="inputs" id="qt" name="qt" placeholder="请输入关键字...">
+								</li>
+								<li>
+									<input class="btn" type="submit" value="　">
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--nav-->
+			<div class="nav">
+				<div class="nav_list clear">
+					<ul>
+						<li class="hover">
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml" target="_blank">
+								<img src="top_data/nav01.png">
+								<span>网站首页</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=1" target="_blank">
+								<img src="top_data/nav03.png">
+								<span>政务公开</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=2" target="_blank">
+								<img src="top_data/nav04.png">
+								<span>政务服务</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=3" target="_blank">
+								<img src="top_data/nav05.png">
+								<span>政民互动</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=4" target="_blank">
+								<img src="top_data/nav06.png">
+								<span>数据开放</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=5" target="_blank">
+								<img src="top_data/nav07.png">
+								<span>解读回应</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.nc.gov.cn/ncszf/index.shtml?nav=6" target="_blank">
+								<img src="top_data/nav02.png">
+								<span>英雄城</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				//搜索地址以及热搜索词获取范围
+				//jsonp 跨域
+				getHotWord("http://so.kaipuyun.cn/", "jsonp", "3601000001", "");
+			});
+
+			function getHotWord(url, type, siteCode, database) {
+				$.ajax({
+					type: "post",
+					async: false,
+					url: url + "hotword?type=" + type + "&siteCode=" + siteCode + "&database=" + database,
+					dataType: "jsonp",
+					jsonp: "callbackparam", //服务端用于接收callback调用的function名的参数  
+					jsonpCallback: "success_jsonpCallback", //callback的function名称  
+					success: function(data) {
+						var html = "";
+						if(data.response == "true") {
+							var hotword = data.hotword.split(",");
+							for(var i = 0; i < 5; i++) {
+								html += "<a target='_blank' style='font-size: 16px; color:#ffffff; padding:0px 5px;' href='" + url + "s?q=1&database=" + database + "&siteCode=" + siteCode + "&qt=" + hotword[i] + "'>" + hotword[i] + "</a>";
+							}
+						} else {
+							html += data.msg;
+						}
+						$("#hotword").html(html);
+
+					}
+				});
+			}
+		</script>
+	
+
+</body></html>

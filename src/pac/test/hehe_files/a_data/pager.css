@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+#page_div {line-height:24px; width:100%; font-size:14px;}
+#page_div .pagination_index, #page_div .pagination_index_num{ line-height:24px;
+	background:url(../images/pager_bg.jpg) repeat-x; border:1px solid #94D996; padding:0 4px;
+	margin-right:4px;
+	float: left;
+	font-size:14px;
+}
+#page_div .pagination_index_num{margin-right:0px; font-size:14px;}
+#page_div .currentIndex{ background:#94D996; font-size:14px; text-decoration:underline; font-weight:bold;}
+#pagination_input{ width:25px; height:12px; font-size:14px; line-height:12px; margin:0; padding:0; overflow:hidden;}
+
+#page_div .pagination_index, #page_div .pagination_index_num{ 
+	background:none; border:0; padding:0 3px; font-size:14px;
+	margin-right:4px;
+	float: left;
+}
+#page_div .pagination_index_num{margin-right:0px; font-size:14px;}
+#page_div .currentIndex{ background:none; font-size:14px; text-decoration:underline;}
+.pagination_index_last{ float:right; font-size:14px;}
+
+
+#ucappageContent{ width:100%; text-align:right; font-size:14px;}
+#ucappageContent span{ margin:5px; cursor:pointer; font-size:14px;}
+
+.ucappage{ width:100%; text-align:center; font-size:14px;}
