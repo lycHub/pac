@@ -74,7 +74,6 @@ $(function () {
                   after = response[item];
                 }
               });
-
               that.setText(after, 'after');
             }
           }

@@ -260,7 +260,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
         }
 
         if (currentCovertion.tpl.type === 'replaceReg') {
-          param.placeholder = '请输入JS正则表达式...';
+          param.placeholder = '请输入JavaScript正则表达式...';
         }
         // console.log('param', param);
         this.renderTpl(currentCovertion.tpl, param);

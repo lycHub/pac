@@ -1,0 +1,75 @@
+#navMenu, #advantageMenu{
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  width:292px;
+  height:288px;
+  position: fixed;
+  right: 50px;
+  top: 200px;
+}
+
+
+
+#navMenu .menu-header, #advantageMenu .advantage-menu-header {
+  padding: 10px;
+}
+
+#navMenu .menu-header .ico, #advantageMenu .advantage-menu-header .ico{
+  width: 24px;
+  height:26px;
+  background: url("./u155.png");
+  background-size: contain;
+  overflow: hidden;
+  float: left;
+}
+#navMenu .menu-header b, #advantageMenu .advantage-menu-header b{
+  font-size: 16px;
+  float: left;
+  margin-left: 10px;
+}
+
+#navMenu .menu-header .close{
+  float: right;
+  font-size: 18px;
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+#navMenu .confirmBox, #navMenu .tipBox{
+  display: none;
+  margin: 30px auto 0;
+  width: 220px;
+}
+
+#navMenu .confirmBox .tip, #navMenu .tipBox .tip {
+  font-size: 18px;
+  color: #1890FF;
+  margin-bottom: 20px;
+}
+
+#navMenu .confirmBox .btns .btn{
+  width: 65px;
+}
+
+
+
+#navMenu .tipBox{
+  display: block;
+}
+
+
+
+#advantageMenu{
+  width:778px;
+  right:350px;
+}
+
+
+#advantageMenu .menu-list{
+  padding-left: 30px;
+  margin-top: 15px;
+}
+
+#advantageMenu .pagingBox{
+  display: none;
+}
