@@ -65,7 +65,7 @@ $(function () {
           contentType: 'application/json',
           data: JSON.stringify(params),
           success: function(res){
-            console.log('ok');
+            console.log('ok', res);
             var response = res.response || null;
             var after = '';
             if (response) {
@@ -91,7 +91,7 @@ $(function () {
       contentType: 'application/json',
       data: JSON.stringify(datas),
       success: function(res){
-        console.log('ok');
+        console.log('ok', res);
         var response = res.response || null;
         var after = '';
         if (response) {
