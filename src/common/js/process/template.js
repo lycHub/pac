@@ -78,12 +78,12 @@ function textAreaTpl(params) {
     var text = params.placeholder || '请输入...';
     return '<div class="area step-replace">\n' +
       '        <div class="row source">\n' +
-      '          <label class="col-md-3">替换内容：</label>\n' +
-      '          <textarea class="textarea-source col-md-8" placeholder="请输入...">'+ value +'</textarea>\n' +
+      '          <label class="col-md-3">查找内容：</label>\n' +
+      '          <textarea class="textarea-source col-md-8" placeholder="'+ text +'" >'+ value +'</textarea>\n' +
       '        </div>\n' +
       '        <div class="row target">\n' +
       '          <label class="col-md-3">替换为：</label>\n' +
-      '          <textarea class="textarea-target col-md-8" placeholder="'+ text +'">'+ value2 +'</textarea>\n' +
+      '          <textarea class="textarea-target col-md-8" placeholder="请输入...">'+ value2 +'</textarea>\n' +
       '        </div>\n' +
       '      </div>';
 };

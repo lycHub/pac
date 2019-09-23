@@ -70,10 +70,11 @@ $(function () {
             var after = '';
             if (response) {
               articleTypes.forEach(function (item) {
-                if (response[item]) {
+                if (response[item] !== 'null') {
                   after = response[item];
                 }
               });
+
               that.setText(after, 'after');
             }
           }
@@ -96,7 +97,7 @@ $(function () {
         var after = '';
         if (response) {
           articleTypes.forEach(function (item) {
-            if (response[item]) {
+            if (response[item] !== 'null') {
               after = response[item];
             }
           });

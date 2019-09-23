@@ -24,7 +24,7 @@
       type: 'replaceText',
       use: 'replaceTextTpl'
     },
-    paramKeys: ['newChar', 'oldChar']
+    paramKeys: ['oldChar', 'newChar']
   }, {
     conversionCode: 4,
     conversionType: '默认值',
@@ -260,9 +260,9 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
         }
 
         if (currentCovertion.tpl.type === 'replaceReg') {
-          param.placeholder = '请输入正则表达式...';
+          param.placeholder = '请输入JS正则表达式...';
         }
-        console.log('param', param);
+        // console.log('param', param);
         this.renderTpl(currentCovertion.tpl, param);
       }else {
         this.renderTpl({ use: 'default' });
@@ -343,6 +343,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 设置文本
     setText: function (text, type) {
+      // console.log('text', text);
       var trueType = type || 'before';
       var trueText = text || '';
       if (trueType === 'before') {
