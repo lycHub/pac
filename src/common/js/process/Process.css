@@ -55,6 +55,8 @@
   border: 1px solid #999;
   height: 125px;
   padding: 5px 0 0 10px;
+  word-break: break-all;
+  overflow-y: auto;
 }
 
 

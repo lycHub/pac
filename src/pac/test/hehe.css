@@ -73,3 +73,20 @@
 #advantageMenu .pagingBox{
   display: none;
 }
+
+#advantageMenu .pagingBox form .left .form-group{
+  margin-bottom: 15px;
+}
+
+#advantageMenu .pagingBox form .left .form-group .next-page {
+  margin-top: 10px;
+}
+
+#advantageMenu .pagingBox form .right{
+  text-align: right;
+  padding-right: 15px;
+}
+
+#advantageMenu .pagingBox form .right .cancel{
+  margin-top: 100px;
+}

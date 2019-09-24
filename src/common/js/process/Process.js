@@ -316,6 +316,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
           filedName = attr || 'title';
         }
       }
+      this.articleVo[filedName] = this.articleVo[filedName].trim();
       var tempParam = {
         articleVo: this.articleVo,
         spiderConversionConfigs: []

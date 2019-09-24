@@ -690,51 +690,52 @@
           </div>
           <!--分页设置表单-->
           <div class="row pagingBox" name="pagingBox" hidden>
-            <form action="" method="post" class="form-horizontal bv-form" id="pagingForm" novalidate="novalidate">
-              <div class="form-group has-feedback">
-                <label class="col-sm-3 control-label">分页方式</label>
-                <div class="col-sm-9">
-                  <select class="form-control" name="pagingType" data-bv-field="pagingType">
-                    <option value="4" selected="selected">点击翻页</option>
-                    <!--<option value="3">滚动翻页</option>-->
-                  </select><i style="display: none;" class="form-control-feedback" data-bv-field="pagingType"></i>
-                  <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="pagingType"
-                         class="help-block">分页方式不能为空
-                  </small>
+            <form action="" method="post" class="form-horizontal bv-form row clearfix" id="pagingForm" novalidate="novalidate">
+              <div class="left col-md-8">
+                <div class="form-group has-feedback">
+                  <label class="col-sm-3 control-label">分页方式</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" name="pagingType" data-bv-field="pagingType">
+                      <option value="4" selected="selected">点击翻页</option>
+                      <!--<option value="3">滚动翻页</option>-->
+                    </select><i style="display: none;" class="form-control-feedback" data-bv-field="pagingType"></i>
+                    <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="pagingType"
+                           class="help-block red">分页方式不能为空
+                    </small>
+                  </div>
+                </div>
+                <div class="form-group has-feedback">
+                  <label class="col-sm-3 control-label">下一页按钮</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="xpath" placeholder="下一页按钮的xpath在此" readonly="readonly"
+                           data-bv-field="xpath"
+                           value="//body/div[contains(@class,&quot;w1000&quot;)]/div[contains(@class,&quot;list_right&quot;)]/div[contains(@class,&quot;cont&quot;)]/div[@id=&quot;page_div&quot;]/div[contains(@class,&quot;pagination_index&quot;)][3]/span[contains(@class,&quot;arrow&quot;)]/a"><i
+                      style="display: none;" class="form-control-feedback" data-bv-field="xpath"></i>
+                    <button class="btn btn-primary next-page" name="selectPagingBtn" type="button" data-bv-field="selectPagingBtn">选择下一页按钮</button>
+                    <i style="display: none;" class="form-control-feedback" data-bv-field="selectPagingBtn"></i>
+                    <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="xpath" class="help-block red">下一页按钮xpath不能为空</small>
+                  </div>
+                </div>
+                <div class="form-group has-feedback has-success">
+                  <label class="col-sm-3 control-label">采集页数</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" name="limit" data-bv-field="limit" value="12">
+                    <i style="display: block;" class="form-control-feedback glyphicon glyphicon-ok" data-bv-field="limit"></i>
+                    <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="limit" class="help-block red">采集页数不能为空</small>
+                  </div>
                 </div>
               </div>
-              <div class="form-group has-feedback">
-                <label class="col-sm-3 control-label">下一页按钮</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" name="xpath" placeholder="下一页按钮的xpath在此" readonly="readonly"
-                         data-bv-field="xpath"
-                         value="//body/div[contains(@class,&quot;w1000&quot;)]/div[contains(@class,&quot;list_right&quot;)]/div[contains(@class,&quot;cont&quot;)]/div[@id=&quot;page_div&quot;]/div[contains(@class,&quot;pagination_index&quot;)][3]/span[contains(@class,&quot;arrow&quot;)]/a"><i
-                    style="display: none;" class="form-control-feedback" data-bv-field="xpath"></i>
-                  <button class="btn btn-small btn-primary" name="selectPagingBtn" type="button"
-                          data-bv-field="selectPagingBtn">选择下一页按钮
-                  </button>
-                  <i style="display: none;" class="form-control-feedback" data-bv-field="selectPagingBtn"></i>
-                  <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="xpath"
-                         class="help-block">下一页按钮xpath不能为空
-                  </small>
+              <div class="right col-md-4">
+                <div class="form-group has-feedback">
+                  <div class="start">
+                    <button class="btn btn-small btn-primary" name="yesBtn" type="submit" id="pagingYesBtn" data-bv-field="yesBtn">开始配置</button>
+                    <i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="yesBtn"></i>
+                  </div>
+                  <div class="cancel">
+                    <button class="btn btn-small btn-primary" name="noBtn" type="button" data-bv-field="noBtn">取消</button>
+                    <i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="noBtn"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group has-feedback has-success">
-                <label class="col-sm-3 control-label">采集页数</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" name="limit" data-bv-field="limit" value="12"><i
-                    style="display: block;" class="form-control-feedback glyphicon glyphicon-ok"
-                    data-bv-field="limit"></i>
-                  <small style="display: none;" data-bv-validator="notEmpty" data-bv-validator-for="limit"
-                         class="help-block">采集页数不能为空
-                  </small>
-                </div>
-              </div>
-              <div class="form-group has-feedback">
-                <button class="btn btn-small btn-primary" name="yesBtn" type="submit" id="pagingYesBtn" data-bv-field="yesBtn">确定</button>
-                <i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="yesBtn"></i>
-                <button class="btn btn-small btn-primary" name="noBtn" type="button" data-bv-field="noBtn">取消</button>
-                <i style="display: none; top: 0px;" class="form-control-feedback" data-bv-field="noBtn"></i>
               </div>
             </form>
           </div>
