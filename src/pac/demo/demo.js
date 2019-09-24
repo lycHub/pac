@@ -7,7 +7,7 @@ var response = {
 var articleTypes = ['articleTime', 'author', 'content', 'source', 'title'];
 
 $(function () {
-  /*$('.sx').click(function () {
+  $('.sx').click(function () {
     var screenTable = new ScreenTable('.modal-wrap-xs', {
       // initialDatas: response || {},
       onInit: function (tableDatas) {
@@ -38,7 +38,7 @@ $(function () {
         });
       }
     });
-  });*/
+  });
 
 
   $('.cl').click(function () {

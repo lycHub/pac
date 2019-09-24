@@ -25,7 +25,7 @@
   ScreenTable.prototype = $.extend(Object.create(Options.prototype), {
     constructor: ScreenTable,
     init: function () {
-      this.el.html(initTpl);
+      this.el.html(initTableTpl);
       this.initEvts();
       var initialDatas = this.options.initialDatas;
       if (initialDatas && !$.isEmptyObject(initialDatas)) {
@@ -207,13 +207,13 @@
       },
 
       addGroup: function (key) {
-        this.tbody.append(groupTpl(key));
+        this.tbody.append(groupTableTpl(key));
       },
       addCondition: function (lastIndex) {
         var rowspan = this.tableDatas[lastIndex].length;
         var lastKey = 'row' + lastIndex;
         this.tbody.find(`tr[rowKey=${lastKey}] th`).attr('rowspan', rowspan);
-        this.tbody.append(conditionTpl(lastKey, rowspan - 1));
+        this.tbody.append(conditionTableTpl(lastKey, rowspan - 1));
       },
 
       getTableDatas: function () {

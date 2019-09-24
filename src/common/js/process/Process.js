@@ -77,7 +77,7 @@ function Process(el, options) {
 Process.prototype = $.extend(Object.create(Options.prototype), {
   constructor: Process,
   init: function () {
-    this.el.html(initTpl);
+    this.el.html(initProcessTpl);
     this.initToolTip();
     this.initEvts();
 

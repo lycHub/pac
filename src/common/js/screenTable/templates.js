@@ -1,4 +1,4 @@
-var initTpl = `<div class="screen-wrap">
+var initTableTpl = `<div class="screen-wrap">
     <div class="caption clearfix">
       <div class="btn-group" role="group">
         <button class="btn group">
@@ -134,7 +134,7 @@ function generatefiledCodeSelect(selected) {
 }
 
 
-function groupTpl(key) {
+function groupTableTpl(key) {
   return `<tr rowKey="${key}">
           <th>或者</th>
           <td>并且</td>
@@ -148,7 +148,7 @@ function groupTpl(key) {
         </tr>`;
 }
 
-function conditionTpl(key, index) {
+function conditionTableTpl(key, index) {
   return `<tr topKey="${key}" index="${index}">
           <td>并且</td>
           <td>
@@ -170,23 +170,23 @@ var emptyStrat = ['1', '2'];
 // 输入框
 var inputStrat = ['3', '4', '5', '6', '7', '8'];
 
-var defaultStrat = defaultTpl;
+var defaultStrat = defaultTableTpl;
 
 emptyStrat.forEach(key => {
-  strats[key] = emptyTpl;
+  strats[key] = emptyTableTpl;
 });
 inputStrat.forEach(key => {
-  strats[key] = inputTpl;
+  strats[key] = inputTableTpl;
 });
 // trKey="${key}" index="${index}"
 
-function emptyTpl(key, index, val) {
+function emptyTableTpl(key, index, val) {
   return `<input placeholder="值" trKey="${key}" index="${index}" value="${val}" class="form-control hide" name="param" />`;
 }
-function inputTpl(key, index, val) {
+function inputTableTpl(key, index, val) {
   return `<input placeholder="值" trKey="${key}" index="${index}" value="${val}" class="form-control" name="param" />`;
 }
-function defaultTpl(key, index, val) {
+function defaultTableTpl(key, index, val) {
   var options = '';
   times.forEach(function (item) {
     // options += `<option value="${item.key}">${item.label}</option>`;

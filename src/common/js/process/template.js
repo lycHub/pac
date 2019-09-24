@@ -1,4 +1,4 @@
-var initTpl = '<div class="pc-process">\n' +
+var initProcessTpl = '<div class="pc-process">\n' +
   '    <div class="sec operates">\n' +
   '      <h5>处理步骤列表</h5>\n' +
   '      <div class="operate-area row">\n' +
@@ -63,16 +63,16 @@ var initTpl = '<div class="pc-process">\n' +
   '    </div>\n' +
   '  </div>';
 
-function defaultTpl() {
+function defaultTableTpl() {
   return '<div class="area step-init"></div>';
 }
 
-function textAreaTpl(params) {
+function textAreaTableTpl(params) {
   var value = params.val1 || '';
   return '<textarea class="area textarea" placeholder="请输入...">'+ value +'</textarea>';
 }
 
- function replaceTextTpl (params) {
+ function replaceTextTableTpl (params) {
     var value = params.val1 || '';
     var value2 = params.val2 || '';
     var text = params.placeholder || '请输入...';
@@ -90,8 +90,8 @@ function textAreaTpl(params) {
 
 
 var tplTypes = {
-  textAreaTpl: textAreaTpl,
-  replaceTextTpl: replaceTextTpl
+  textAreaTpl: textAreaTableTpl,
+  replaceTextTpl: replaceTextTableTpl
 }
 /*
 * val1, val2, placeholder
@@ -100,7 +100,7 @@ var tplTypes = {
 
 function stepInfoTpl(type, params) {
   if (!type || type === 'default') {
-    return defaultTpl();
+    return defaultTableTpl();
   }
 
   return tplTypes[type](params || {});
