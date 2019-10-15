@@ -1,4 +1,4 @@
-console.log('process');
+console.log('demo');
 var response = {
   articleVo: {title: 'eeee'},
   spiderConversionConfigs: []
@@ -39,8 +39,6 @@ $(function () {
       }
     });
   });
-
-
   $('.cl').click(function () {
     console.log('cl');
     var datas = JSON.parse(localStorage.getItem('steps-record'));
@@ -102,3 +100,10 @@ $(function () {
     });
   });
 });
+
+
+/*
+function checkLeave(){
+  localStorage.removeItem('testKey');
+  event.returnValue="确定离开当前页面吗？";
+}*/

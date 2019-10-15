@@ -20,6 +20,7 @@
     this.rowIndex = -1;
     this.tableDatas = [];
     this.acquisitionType = 0;
+    this.uidIndex = -1;
     this.init();
   }
   ScreenTable.prototype = $.extend(Object.create(Options.prototype), {
@@ -42,9 +43,12 @@
         filterExpression = filterExpression.slice(2, -1);
         this.acquisitionType = 1;
       }
+      var that = this;
       this.tableDatas = filterExpression.split('||').map(row => row.split('&&').map(function() {
+        that.uidIndex++;
         return formatFilterConfigs.shift();
       }));
+      // console.log(this.tableDatas);
       this.generateTable(this.tableDatas);
       this.el.find('.caption .select select[name = acquisitionType] option').eq(this.acquisitionType).prop('selected', 'selected');
     },
@@ -167,8 +171,8 @@
 
       handleGroupClick: function() {
         this.rowIndex++;
-        // $.extend({}, this.baseRow, { uuid: 'ff0' })
-        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { varName: 'f_0' })];
+        this.uidIndex++;
+        this.tableDatas[this.rowIndex] = [$.extend({}, this.baseRow, { varName: 'f_' + this.uidIndex })];
         this.addGroup('row' + this.rowIndex);
       },
 
@@ -177,7 +181,9 @@
         if (!this.tableDatas.length) {
           this.handleGroupClick();
         }else {
-          var uuid = 'f_' + this.tableDatas[this.rowIndex].length;
+          this.uidIndex++;
+          // var uuid = 'f_' + this.tableDatas[this.rowIndex].length;
+          var uuid = 'f_' + this.uidIndex;
           this.tableDatas[this.rowIndex].push($.extend({}, this.baseRow, { varName: uuid }));
           this.addCondition(this.rowIndex);
         }

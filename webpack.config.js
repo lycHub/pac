@@ -6,7 +6,7 @@ module.exports = {
   ],
     devServer: {
       host: "192.168.212.99",
-      port: "4200",
+      // port: "4200",
      /* proxy: {
         '/qa': {
           target: 'http://192.168.205.11:8091',  // 测试

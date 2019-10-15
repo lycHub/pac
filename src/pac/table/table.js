@@ -120,46 +120,46 @@ $(function () {
           filedName: 'title',
           filterCode: '3',
           param: '322',
-          varName: 'f_0'
+          varName: 'f_1'
         }, {
           filedName: 'source',
           filterCode: '3',
           param: 'ds',
-          varName: 'f_1'
+          varName: 'f_2'
         }, {
           filedName: 'author',
           filterCode: '4',
           param: 'dss',
-          varName: 'f_2'
+          varName: 'f_3'
         },
         {
           filedName: 'source',
           filterCode: '9',
           param: '301',
-          varName: 'f_0'
+          varName: 'f_4'
         },
         {
           filedName: 'author',
           filterCode: '10',
           param: '201',
-          varName: 'f_0'
+          varName: 'f_5'
         },
         {
           filedName: 'author',
           filterCode: '5',
           param: '32',
-          varName: 'f_0'
+          varName: 'f_6'
         }, {
           filedName: 'author',
           filterCode: '3',
           param: '345',
-          varName: 'f_1'
+          varName: 'f_7'
         },
         {
           filedName: 'title',
           filterCode: '1',
           param: '',
-          varName: 'f_0'
+          varName: 'f_8'
         }
       ]
     }
