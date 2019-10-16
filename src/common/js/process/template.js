@@ -67,6 +67,19 @@ function defaultTableTpl() {
   return '<div class="area step-init"></div>';
 }
 
+function extractRegTableTpl(params) {
+  var value = params.val1 || '.*';
+  return `
+    <div class="area">
+      <div class="quick-select">
+        <label><input name="quick" type="checkbox" value="g" />提取所有匹配的结果</label> 
+        <label><input name="quick" type="checkbox" value="i" />忽略大小写</label> 
+      </div>
+      <textarea class="exp-replace" placeholder="请输入...">${value}</textarea>
+    </div>
+  `
+}
+
 function textAreaTableTpl(params) {
   var value = params.val1 || '';
   return '<textarea class="area textarea" placeholder="请输入...">'+ value +'</textarea>';
@@ -89,9 +102,28 @@ function textAreaTableTpl(params) {
 };
 
 
+function extractTextTableTpl (params) {
+    var value = params.val1 || '';
+    var value2 = params.val2 || '';
+    var text = params.placeholder || '请输入...';
+    return '<div class="area step-replace">\n' +
+      '        <div class="row source">\n' +
+      '          <label class="col-md-3">开始字符串：</label>\n' +
+      '          <textarea class="textarea-source col-md-8" placeholder="'+ text +'" >'+ value +'</textarea>\n' +
+      '        </div>\n' +
+      '        <div class="row target">\n' +
+      '          <label class="col-md-3">结束字符串：</label>\n' +
+      '          <textarea class="textarea-target col-md-8" placeholder="请输入...">'+ value2 +'</textarea>\n' +
+      '        </div>\n' +
+      '      </div>';
+};
+
+
 var tplTypes = {
   textAreaTpl: textAreaTableTpl,
-  replaceTextTpl: replaceTextTableTpl
+  replaceTextTpl: replaceTextTableTpl,
+  extractTextTpl: extractTextTableTpl,
+  extractRegTpl: extractRegTableTpl,
 }
 /*
 * val1, val2, placeholder

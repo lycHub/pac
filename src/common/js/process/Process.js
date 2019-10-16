@@ -1,6 +1,7 @@
 (function (w) {
   var articleTypes = ['articleTime', 'author', 'content', 'source', 'title'];
-
+  var reg = /(\/(i|g){1,2})$/;
+  var slashReg = /(\/*)$/;
   var conversionTypes = [{
     conversionCode: 1,
     conversionType: '添加前缀',
@@ -26,6 +27,15 @@
     },
     paramKeys: ['oldChar', 'newChar']
   }, {
+    conversionCode: 7,
+    conversionType: '文本提取',
+    tpl: {
+      type: 'text',
+      use: 'extractTextTpl'
+
+    },
+    paramKeys: ['startChar', 'endChar']
+  }, {
     conversionCode: 4,
     conversionType: '默认值',
     tpl: {
@@ -49,6 +59,14 @@
       use: 'replaceTextTpl'
     },
     paramKeys: ['jsRegex', 'replacement']
+  }, {
+    conversionCode: 8,
+    conversionType: '正则提取',
+    tpl: {
+      type: 'replaceReg',
+      use: 'extractRegTpl'
+    },
+    paramKeys: ['jsRegex']
   }];
 
 
@@ -170,12 +188,49 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
       this.stepInfo.on('blur', '.textarea', function () {
         that.onTextBlur(this.value);
       });
+
+      this.stepInfo.on('blur', '.exp-replace', function () {
+        that.onTextBlur(this.value);
+      });
       this.stepInfo.on('blur', '.textarea-source', function () {
         that.onTextSourceBlur(this.value);
       });
       this.stepInfo.on('blur', '.textarea-target', function () {
         that.onTextTargetBlur(this.value);
       });
+      // console.log('area', this.area[0]);
+      this.stepInfo.on('change', '.quick-select input', function () {
+        that.onRegChanges();
+      });
+    },
+
+    onRegChanges() {
+      var selectedReg = this.getCheckboxVals();
+      console.log('selectedReg', selectedReg);
+      var text = this.stepInfo.find('.exp-replace').val();
+      var matching = text.match(reg);
+      var result = text;
+      if (matching) {
+        // console.log('matching', matching);
+        result = text.replace(reg, '/' + selectedReg);
+      } else {
+        result = `/${text.replace(slashReg, '')}/${selectedReg}`;
+      }
+      this.stepInfo.find('.exp-replace').val(result);
+      var currentCoversion = this.selectedConversions[this.highlightConversionIndex];
+      currentCoversion.param = this.makeParam(currentCoversion.paramKeys, [result || '']);
+      // console.log('currentCoversion', currentCoversion);
+      this.onParamChange();
+    },
+
+    getCheckboxVals() {
+      var result = '';
+      this.stepInfo.find('.quick-select input').each((index, item) => {
+        if (item.checked) {
+          result += item.value;
+        }
+      });
+      return result;
     },
 
     // 上移

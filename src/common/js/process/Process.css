@@ -59,6 +59,26 @@
   overflow-y: auto;
 }
 
+.pc-process .area label{
+  margin-right: 10px;
+}
+
+.pc-process .area label input[type=checkbox], .pc-process .area label input[type=radio] {
+  position: static;
+  opacity: 1;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+.pc-process .area .exp-replace{
+  width: 98%;
+  resize: none;
+  height: 80px;
+  padding: 5px 0 0 10px;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
 
 
 .pc-process .process-bef .area, .pc-process .process-af .area{

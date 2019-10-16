@@ -99,6 +99,38 @@ $(function () {
       }
     });
   });
+
+
+  var area = $('.area');
+  var reg = /(\/(i|g){1,2})$/;
+
+  var slashReg = /(\/*)$/;
+  var tempVal = 'asd/'
+  area.find('.quick-select input').change(function () {
+    var selectedReg = getCheckboxVals();
+    // console.log('selectedReg', selectedReg);
+    var text = area.find('.exp-replace').val();
+    var matching = text.match(reg);
+    var result = text;
+    if (matching) {
+      // console.log('matching', matching);
+      result = text.replace(reg, '/' + selectedReg);
+    } else {
+      result = `/${text.replace(slashReg, '')}/${selectedReg}`;
+    }
+    area.find('.exp-replace').val(result);
+  });
+
+
+  function getCheckboxVals() {
+    var result = '';
+    area.find('.quick-select input').each((index, item) => {
+      if (item.checked) {
+        result += item.value;
+      }
+    });
+    return result;
+  }
 });
 
 
