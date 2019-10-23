@@ -67,6 +67,10 @@ function defaultTableTpl() {
   return '<div class="area step-init"></div>';
 }
 
+function disableTableTpl() {
+  return '<textarea class="area textarea dis" placeholder="请输入..." disabled></textarea>';
+}
+
 function extractRegTableTpl(params) {
   var value = params.val1 || '.*';
   return `
@@ -124,6 +128,7 @@ var tplTypes = {
   replaceTextTpl: replaceTextTableTpl,
   extractTextTpl: extractTextTableTpl,
   extractRegTpl: extractRegTableTpl,
+  disableTpl: disableTableTpl,
 }
 /*
 * val1, val2, placeholder

@@ -67,6 +67,14 @@
       use: 'extractRegTpl'
     },
     paramKeys: ['jsRegex']
+  }, {
+    conversionCode: 9,
+    conversionType: '提取时间',
+    tpl: {
+      type: 'replaceReg',
+      use: 'disableTpl'
+    },
+    paramKeys: []
   }];
 
 
@@ -271,11 +279,18 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
     onCreateStep: function (evt) {
       var code = $(evt.target).data('code');
       var stepType = _.find(conversionTypes, { conversionCode: code });
+      var params = {};
+      if (code === 9) {
+        params = '';
+      }
       if (stepType) {
-        this.selectedConversions.push($.extend({}, stepType, { param: {} }));
+        this.selectedConversions.push($.extend({}, stepType, { param: params }));
         this.highlightConversionIndex = this.selectedConversions.length - 1;
         this.renderSteps();
         this.setTpl(stepType);
+      }
+      if (code === 9) {
+        this.onParamChange();
       }
     },
 
@@ -305,7 +320,7 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 设置tpl值
     setTpl: function (currentCovertion) {
-      console.log('currentCovertion', currentCovertion);
+      // console.log('currentCovertion', currentCovertion);
       var keyCount = 0;
       // var currentCovertionParam = (typeof currentCovertion.param === 'string') ? JSON.parse(currentCovertion.param) : currentCovertion.param;
       var param = {};
@@ -396,6 +411,8 @@ Process.prototype = $.extend(Object.create(Options.prototype), {
 
     // 组装param
     makeParam: function (paramKeys, values) {
+      console.log('paramKeys', paramKeys);
+      console.log('values', values);
       return _.zipObject(paramKeys, values);
     },
 

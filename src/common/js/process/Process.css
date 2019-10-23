@@ -107,6 +107,10 @@
   resize: none;
 }
 
+.pc-process .dis{
+  cursor: not-allowed;
+}
+
 
 /* 替换 */
 .pc-process .step-replace .row textarea{
